@@ -22,6 +22,11 @@ task journals, browser captures and discarded studies are not imported.
 - Public author attribution and upstream copyright holders are retained. Removing
   them would impair provenance rather than protect a secret.
 
+The scene skills and generated consumer workflow now explicitly state that packaging
+copies profile/evidence values, artifacts and any supplied journal without
+anonymization. Local packaging or a design LOOP PASS does not clear that output
+for public sharing or confer source rights.
+
 The scanner is a bounded check, not proof that every possible secret format or
 piece of personal information has been recognized. Source inputs supplied to a
 future task need their own privacy review before distribution.

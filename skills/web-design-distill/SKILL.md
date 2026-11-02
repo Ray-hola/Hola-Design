@@ -104,6 +104,16 @@ python3 "$SKILL_ROOT/scripts/profile_tools.py" package profile.json --review rev
   --name example-reviewed-reference --out ./distilled-skills
 ```
 
+## Sharing a distilled package
+
+Packaging copies the profile, evidence values, selected artifacts and any supplied
+review journal. It does not redact private data or grant redistribution rights.
+Before sharing the result, inspect that exact output for credentials, signed URLs,
+local paths, private content and source assets. Share only the materials permitted
+for the intended audience; retain applicable licenses and attribution. Keep
+restricted captures local and transfer the design reasoning in your own words.
+A design LOOP PASS is not a privacy or copyright clearance.
+
 Draft packages are testable before the outer loop. Call a package reviewed only
 for its recorded scope when all three loops are accepted. Author-run tests do not
 establish independent transfer. Report outstanding failures and source coverage

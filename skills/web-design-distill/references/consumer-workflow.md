@@ -145,3 +145,12 @@ the existing LOOP; these questions cannot pass the design for you.
 When scoping ambition, reviewing a render or closing repairs, read
 `references/impeccable-lessons.md`. It records source locators, conditions and what
 was not adopted. These are method candidates, not facts about this reference.
+
+## Sharing and source rights
+
+Treat this as a local working package until its actual contents have been reviewed
+for the intended audience. The packager copies profile/evidence values, artifacts
+and any supplied journal; it does not redact them. Do not share credentials, signed
+URLs, private source content or restricted reference assets. Preserve the rights
+and attribution of any material you can redistribute. Distilled rules, font names,
+source access and a design LOOP PASS do not grant rights to the source files.

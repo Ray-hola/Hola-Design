@@ -31,3 +31,10 @@ For evidence-graded product interpretation and visual relationships, read
 its optional fields do not merge the domain pattern schemas. `visual_rules` may
 record representation, unit, relative_to, scope, precision and ratio basis.
 The generated skill gets intent.json and the methodological references.
+
+## Distribution boundary
+
+Artifact paths select files to copy, not files cleared for publication. Profiles,
+evidence values and supplied journals are copied as data without anonymization.
+Keep private working packages local; review the exact output and source rights
+before sharing with its intended audience.
