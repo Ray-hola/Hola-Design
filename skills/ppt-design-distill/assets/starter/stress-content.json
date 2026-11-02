@@ -1,0 +1,30 @@
+{
+  "purpose": "Synthetic edge-case content, never real customer evidence",
+  "text": {
+    "short": "Brief",
+    "long_en": "A longer explanation that must remain understandable when the available width changes or a related action stays visible.",
+    "identifier": "ARCHIVE_2026_ABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789_ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "mixed": "Archive 2026 — cafe notes / field observations & context"
+  },
+  "counts": [
+    0,
+    1,
+    2,
+    5
+  ],
+  "checks": [
+    "Long conclusion headings and chart labels",
+    "Units and source annotations",
+    "Continuity when one argument spans several slides",
+    "Validate the native deliverable separately"
+  ],
+  "script_coverage": {
+    "purpose": "Use actual copy from the brief to test its writing system; English instructions do not constrain the deliverable language.",
+    "checks": [
+      "Glyph coverage and actual font loading",
+      "Line breaking and punctuation placement",
+      "Pairing between writing systems",
+      "Long and short copy without illegible shrinking"
+    ]
+  }
+}

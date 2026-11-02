@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "repository": "https://github.com/nathanonn/agent-skills",
+  "commit": "37d7f0fbc9d792a8a3ab0ac2f78f318b2922375e",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Nathan Onn",
+  "verified_date": "2026-11-02",
+  "verification": "Each file matches a blob in the pinned upstream tree. Local wrappers, packaging and review helpers are separate original material.",
+  "files": [
+    {
+      "path": "scripts/build-fixtures.js",
+      "sha256": "f225b2a2d75ba47cb62f05acc8ab378c32e8d89d741a15abe5ea0c4ba111ec46",
+      "git_blob": "d17e73a2dfd9bc3a6a6c0e19f8c3c9feb7f28b60",
+      "upstream_path": "plugins/extract-design-system/skills/extract-design-system/scripts/build-fixtures.js"
+    },
+    {
+      "path": "scripts/build-snippets.js",
+      "sha256": "5d46106ea9ceb094b3f96034e165a39d22851fbe66d9596981e08f186807e180",
+      "git_blob": "01c51fca9fb4d8b28ac2a6a0d9afc000eb98bd4d",
+      "upstream_path": "plugins/extract-design-system/skills/extract-design-system/scripts/build-snippets.js"
+    },
+    {
+      "path": "scripts/cluster.js",
+      "sha256": "dbf7d8641b09fb8a60bda3016167dbc285ca0e56bde18b95ac4060a29010fee5",
+      "git_blob": "bc381e3d3893ca0403ab9a07a6019cbc320dca11",
+      "upstream_path": "plugins/extract-design-system/skills/extract-design-system/scripts/cluster.js"
+    },
+    {
+      "path": "scripts/distill.js",
+      "sha256": "54d4d9e48fb543860becd714070d719c8eaa3c28f3cdb198bbe3c975f8972cab",
+      "git_blob": "91ed759d2ad56744a28ba10f52aaf23700b2cca1",
+      "upstream_path": "plugins/extract-design-system/skills/extract-design-system/scripts/distill.js"
+    },
+    {
+      "path": "scripts/eval-selftest.js",
+      "sha256": "616d298188280108038e677f301297c7fcdb613a209ba5272df179289771ba94",
+      "git_blob": "6c10bff2af8175ad85f3f2af42a6d62653ef1bbe",
+      "upstream_path": "plugins/extract-design-system/skills/extract-design-system/scripts/eval-selftest.js"
+    },
+    {
+      "path": "scripts/export-dtcg.js",
+      "sha256": "facc0f95cbf6f1d63f126c5421a2bbc35b03661330f9fa7187de1735cf37af04",
+      "git_blob": "7eb7b2815a29c6fbc0c63de5271b676b88db1721",
+      "upstream_path": "plugins/extract-design-system/skills/extract-design-system/scripts/export-dtcg.js"
+    },
+    {
+      "path": "scripts/extract-components.js",
+      "sha256": "43970544b31ffc5f73b7e36382f8edbd8d4fffa24d5a801a855f60be59aa40df",
+      "git_blob": "cb338c1c606804a78f42112870838eca742243be",
+      "upstream_path": "plugins/extract-design-system/skills/extract-design-system/scripts/extract-components.js"
+    },
+    {
+      "path": "scripts/extract-sections.js",
+      "sha256": "95f35dcbf8238dd3b8a278f3de15ce594d368e8b166952c16fbb190a74c66125",
+      "git_blob": "8105afc75bab35c545492157fabd6e63fadeda9b",
+      "upstream_path": "plugins/extract-design-system/skills/extract-design-system/scripts/extract-sections.js"
+    },
+    {
+      "path": "scripts/extract-tokens.js",
+      "sha256": "b329884df3850db5b12566babe3be3ba21b249bea53ef3ebe2d56354e5897b61",
+      "git_blob": "61ff14c530b45e6dad07343d3024d51128a19b67",
+      "upstream_path": "plugins/extract-design-system/skills/extract-design-system/scripts/extract-tokens.js"
+    },
+    {
+      "path": "scripts/slice-result.sh",
+      "sha256": "c1991f132f254a0e1619d4a257bd0cb36fdef150e1202d85265bbf0701d56199",
+      "git_blob": "cd7f80707eda568c3ce719b1e3a340b14d5c3562",
+      "upstream_path": "plugins/extract-design-system/skills/extract-design-system/scripts/slice-result.sh"
+    }
+  ]
+}

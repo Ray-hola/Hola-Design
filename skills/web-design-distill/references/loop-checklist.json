@@ -1,0 +1,99 @@
+{
+  "scene": "web",
+  "distillation": [
+    {
+      "id": "traceability",
+      "required": true,
+      "intent": "Each source rule traces to a locator and evidence status."
+    },
+    {
+      "id": "fidelity",
+      "required": true,
+      "intent": "Rules match inspected sources; inference is not presented as observation."
+    },
+    {
+      "id": "domain_relations",
+      "required": true,
+      "intent": "Domain structures and relationships have supporting evidence."
+    },
+    {
+      "id": "scope",
+      "required": true,
+      "intent": "State the accepted scope, conditions, exceptions and unverified boundaries."
+    }
+  ],
+  "design": [
+    {
+      "id": "typography",
+      "required": true,
+      "intent": "Type roles, line length, scale and readability support applicable relationships."
+    },
+    {
+      "id": "whitespace",
+      "required": true,
+      "intent": "Spacing and density support grouping and reading rhythm."
+    },
+    {
+      "id": "hierarchy",
+      "required": true,
+      "intent": "Primary information, section relationships and action paths are clear."
+    },
+    {
+      "id": "color",
+      "required": true,
+      "intent": "Color roles and contrast support content and identity."
+    },
+    {
+      "id": "content_fit",
+      "required": true,
+      "intent": "Sections fit actual content without invented cases or data."
+    },
+    {
+      "id": "responsive",
+      "required": true,
+      "intent": "Actually render required widths and inspect overflow and relationships."
+    },
+    {
+      "id": "integrity",
+      "required": true,
+      "intent": "Declared objects, the ground, every display context and the exported file stay complete and intact: nothing is lost, interrupted or occluded unintentionally, and the whole holds after edits."
+    },
+    {
+      "id": "motion",
+      "required": false,
+      "intent": "Required motion respects source conditions and reduced motion."
+    },
+    {
+      "id": "micro_interaction",
+      "required": false,
+      "intent": "Applicable control feedback is verified through actual operation."
+    },
+    {
+      "id": "originality",
+      "required": false,
+      "intent": "Meet requested originality while respecting supported source identity."
+    }
+  ],
+  "feedback": [
+    {
+      "id": "new_task",
+      "required": true,
+      "intent": "Produce an actual new-content/task artifact that can expose transfer gaps."
+    },
+    {
+      "id": "attribution",
+      "required": true,
+      "intent": "Match failure causes to the repair layer, or explain why no failure was found."
+    },
+    {
+      "id": "regression",
+      "required": true,
+      "intent": "Recheck the original failure and previously valid affected behavior after repair."
+    },
+    {
+      "id": "scope",
+      "required": true,
+      "intent": "State the accepted scope, conditions, exceptions and unverified boundaries."
+    }
+  ]
+}

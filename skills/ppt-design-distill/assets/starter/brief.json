@@ -1,0 +1,24 @@
+{
+  "scene": "ppt",
+  "template_status": "example-to-replace",
+  "audience": "",
+  "goal": "",
+  "real_content": [],
+  "source_materials": [],
+  "source_rule_ids": [],
+  "supported_scope": "",
+  "success_checks": [],
+  "explicit_exceptions": [],
+  "viewing_mode": "live-talk/self-read/remote — choose one",
+  "canvas": "16:9 proposed; confirm actual source",
+  "delivery_format": "",
+  "sequence_goal": "",
+  "reference_questions": {
+    "theme": null,
+    "audience": null,
+    "function": null,
+    "purpose": null,
+    "use_context": null
+  },
+  "reference_questions_note": "Interpret the source with evidence status; keep this separate from the current task goal."
+}

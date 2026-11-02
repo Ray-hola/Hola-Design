@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI Design Distill"
+  short_description: "Learn product tasks, component rules and observed state flows"
+  default_prompt: "Use $ui-design-distill to distill these references into a reusable design skill."

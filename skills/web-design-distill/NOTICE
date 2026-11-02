@@ -1,0 +1,23 @@
+Original material in this skill: Copyright 2026 Ray-hola. Licensed under the Apache License, Version 2.0; see LICENSE-APACHE. The LICENSE file in this folder is Nathan Onn's MIT License for the material derived from agent-skills. Third-party material named below keeps its own terms.
+
+references/principles.json holds review questions written for this project in its own words. They contain no quotations, chapter list or page references from any book.
+
+Design Distill is derived from Nathan Onn's agent-skills repository:
+https://github.com/nathanonn/agent-skills
+Pinned commit: 37d7f0fbc9d792a8a3ab0ac2f78f318b2922375e
+Copyright (c) 2026 Nathan Onn. MIT License, reproduced in LICENSE.
+
+Kept unchanged because the extraction workflow needs them: ten scripts in scripts/
+(build-fixtures, build-snippets, cluster, distill, eval-selftest, export-dtcg,
+extract-components, extract-sections, extract-tokens, slice-result), under the MIT
+License in LICENSE. references/extraction-pipeline.md is rewritten in our own words
+from that project's documents. The upstream packaging converter, its templates and
+the original documents are not included.
+
+UI UX Pro Max runtime/data vendored from nextlevelbuilder/ui-ux-pro-max-skill, commit 28b3b8dee8c976df4fa3e94aed4e092ad43fcb03, MIT Copyright (c) 2024 Next Level Builder. Full license and per-file provenance: vendor/ui-ux-pro-max/LICENSE and UPSTREAM.json. No font binaries or external images included.
+
+Local English-only normalization: data/styles.csv removes the translated parenthetical from the Bauhaus label. All other upstream bytes remain unchanged; UPSTREAM.json preserves the original hash and records the local hash and modification.
+
+references/recipes.json also has cards listing that project as a mechanism source; those are rewritten in our own words.
+
+Impeccable method lessons: references/impeccable-lessons.md is an original summary in our own words of methods observed in pbakaus/impeccable, commit e89e3ada3e875a89ac2c5d33d11e65ebef6fe285, Apache-2.0, Copyright 2025 Paul Bakaus and contributors. No code, data or assets from that project are included.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Web Design Distill"
+  short_description: "Learn website purpose, section patterns and responsive rules"
+  default_prompt: "Use $web-design-distill to distill these references into a reusable design skill."

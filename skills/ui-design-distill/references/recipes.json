@@ -1,0 +1,447 @@
+{
+  "scene": "ui",
+  "profile_collections": [
+    "visual_rules",
+    "screens",
+    "components",
+    "states",
+    "transitions",
+    "tasks",
+    "typefaces",
+    "design_cases"
+  ],
+  "meaning": "Newly authored generic proposals; source-derived profile evidence stays separate",
+  "cards": [
+    {
+      "id": "list-detail",
+      "title": "List/detail task",
+      "keywords": "list detail search lookup",
+      "status": "proposed",
+      "when": "Locate an object, inspect it or act on it.",
+      "avoid_when": "Only a summary is needed, without object operations.",
+      "inputs": [
+        "Object fields",
+        "Lookup criteria",
+        "Detail and return paths"
+      ],
+      "steps": [
+        "Define the object and success",
+        "Design locate, inspect and return",
+        "Preserve filters and scroll context"
+      ],
+      "checks": [
+        "State preserved on return",
+        "Empty collection differs from no results"
+      ],
+      "worked_example": {
+        "input": "Find an order and inspect shipping",
+        "choose": "Locate it in a list, enter details and return",
+        "avoid": "Lose filters when entering details",
+        "reason": "Paths complete tasks; card counts do not"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill",
+        "ibelick/ui-skills",
+        "Dammyjay93/interface-design",
+        "google-labs-code/stitch-skills"
+      ]
+    },
+    {
+      "id": "form-errors",
+      "title": "Recoverable form",
+      "keywords": "form validation errors error summary",
+      "status": "proposed",
+      "when": "Submit structured data with possible input errors.",
+      "avoid_when": "No input or submission is necessary.",
+      "inputs": [
+        "Fields and labels",
+        "Validation rules",
+        "Success/failure states"
+      ],
+      "steps": [
+        "Use native semantics first",
+        "Keep entered values and associate errors",
+        "Provide field navigation and appropriate summary focus"
+      ],
+      "checks": [
+        "Keyboard and focus",
+        "Recover without reentering valid values"
+      ],
+      "worked_example": {
+        "input": "Save an invalid email",
+        "choose": "Link summary to the field and retain other values",
+        "avoid": "Show only a toast and clear the form",
+        "reason": "Feedback should help finish the task"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill",
+        "ibelick/ui-skills",
+        "Dammyjay93/interface-design",
+        "google-labs-code/stitch-skills"
+      ]
+    },
+    {
+      "id": "state-matrix",
+      "title": "State coverage",
+      "keywords": "empty loading error states recovery",
+      "status": "proposed",
+      "when": "Data or permissions change available operations.",
+      "avoid_when": "Static images are being used to fabricate behavior.",
+      "inputs": [
+        "Actual state sources",
+        "Triggers",
+        "Recovery actions"
+      ],
+      "steps": [
+        "Separate initial empty, no results, loading and error",
+        "Implement states required by the actual task",
+        "Record unknown behavior rather than guessing"
+      ],
+      "checks": [
+        "State explained",
+        "Recovery works"
+      ],
+      "worked_example": {
+        "input": "A list request fails",
+        "choose": "Keep filters and offer retry",
+        "avoid": "Label a failed request as no data",
+        "reason": "Absence and retrieval failure require different actions"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill",
+        "ibelick/ui-skills",
+        "Dammyjay93/interface-design",
+        "google-labs-code/stitch-skills"
+      ]
+    },
+    {
+      "id": "destructive",
+      "title": "Consequential operation",
+      "keywords": "delete destructive undo",
+      "status": "proposed",
+      "when": "A requested data action may be irreversible.",
+      "avoid_when": "Ordinary navigation or harmless switching.",
+      "inputs": [
+        "Affected objects",
+        "Consequences and permissions",
+        "Undo/confirmation conditions"
+      ],
+      "steps": [
+        "Name objects and consequences",
+        "Reuse the product undo/confirmation mechanism",
+        "Keep success/failure understandable"
+      ],
+      "checks": [
+        "Cancel reachable",
+        "Failure never presented as success"
+      ],
+      "worked_example": {
+        "input": "Delete a draft",
+        "choose": "Identify the draft and provide clear cancellation",
+        "avoid": "Add confirmation to every button",
+        "reason": "Friction should match actual consequences"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill",
+        "ibelick/ui-skills",
+        "Dammyjay93/interface-design",
+        "google-labs-code/stitch-skills"
+      ]
+    },
+    {
+      "id": "dense-data",
+      "title": "Dense data task",
+      "keywords": "table data density",
+      "status": "proposed",
+      "when": "Scan or compare many structured objects.",
+      "avoid_when": "Content is small or primarily narrative.",
+      "inputs": [
+        "Key fields",
+        "Comparison task",
+        "Long text and extreme values"
+      ],
+      "steps": [
+        "Prioritize fields by task",
+        "Align comparable numbers with units",
+        "Test truncation/filtering/virtualization at real scale"
+      ],
+      "checks": [
+        "Essential values retained",
+        "Long fields preserve operation access"
+      ],
+      "worked_example": {
+        "input": "An order table shows amounts and states",
+        "choose": "Make numbers comparable; repeat state cues beyond color",
+        "avoid": "Replace every relation with equal-width cards",
+        "reason": "Task determines density"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill",
+        "ibelick/ui-skills",
+        "Dammyjay93/interface-design",
+        "google-labs-code/stitch-skills"
+      ]
+    },
+    {
+      "id": "keyboard-path",
+      "title": "Keyboard path",
+      "keywords": "keyboard focus operation",
+      "status": "proposed",
+      "when": "The target platform supports keyboard input.",
+      "avoid_when": "A screenshot is being treated as keyboard evidence.",
+      "inputs": [
+        "Actual controls",
+        "Focus order",
+        "Overlay/closing conditions"
+      ],
+      "steps": [
+        "Inspect native controls first",
+        "Execute the complete keyboard task",
+        "Check focus after closing overlays"
+      ],
+      "checks": [
+        "Visible focus",
+        "No traps or unreachable actions"
+      ],
+      "worked_example": {
+        "input": "Filter then open order details",
+        "choose": "Traverse controls and preserve return context",
+        "avoid": "Assume clickable divs work by keyboard",
+        "reason": "Pointer and keyboard are different behavior evidence"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill",
+        "ibelick/ui-skills",
+        "Dammyjay93/interface-design",
+        "google-labs-code/stitch-skills"
+      ]
+    },
+    {
+      "id": "chart-choice",
+      "title": "Chart from the question",
+      "keywords": "chart graph data visualization trend comparison share",
+      "status": "proposed",
+      "when": "Numbers must answer a specific question.",
+      "avoid_when": "One figure or a short table already answers it.",
+      "inputs": [
+        "The question asked",
+        "Data shape and volume",
+        "Reading conditions"
+      ],
+      "steps": [
+        "Write the question the reader brings",
+        "Pick the form that answers it: line for change, bars for ranking, table for exact lookup",
+        "Label directly where possible, and do not rely on hue alone"
+      ],
+      "checks": [
+        "Readable in grayscale",
+        "Axis baseline does not exaggerate",
+        "Exact values reachable without hover"
+      ],
+      "worked_example": {
+        "input": "Five regions across twelve months",
+        "choose": "Lines with direct labels",
+        "avoid": "A pie for each month",
+        "reason": "Change over time is the question, and pies hide it"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "color-roles",
+      "title": "Color by role",
+      "keywords": "color palette contrast theme dark semantic token",
+      "status": "proposed",
+      "when": "Defining or extending colors for an interface.",
+      "avoid_when": "The reference already has measured colors covering the need.",
+      "inputs": [
+        "Reference colors",
+        "Surfaces used",
+        "Status meanings"
+      ],
+      "steps": [
+        "Name roles before values: surface, text, border, accent, status",
+        "Measure text and control contrast on each actual surface",
+        "Give status a second cue besides color",
+        "Treat dark mode as its own set of decisions, not an inversion"
+      ],
+      "checks": [
+        "Body text at 4.5:1 or better, large text and controls at 3:1 or better",
+        "Status understood without hue",
+        "Accent still rare enough to mean something"
+      ],
+      "worked_example": {
+        "input": "Add an error state to a muted palette",
+        "choose": "A distinct error role plus an icon and message",
+        "avoid": "Red text alone at low contrast",
+        "reason": "Hue alone fails some viewers"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "type-pairing",
+      "title": "Choosing typefaces",
+      "keywords": "font typeface pairing typography licensing",
+      "status": "proposed",
+      "when": "No reference type governs and a typeface must be chosen.",
+      "avoid_when": "Source typography already answers the role.",
+      "inputs": [
+        "Text roles",
+        "Languages and glyphs needed",
+        "Licensing and delivery limits"
+      ],
+      "steps": [
+        "List roles first, and use one family unless a role needs another",
+        "Set real copy in candidates at real sizes",
+        "Check glyph coverage, weights and license before committing"
+      ],
+      "checks": [
+        "Roles differ at a glance",
+        "Actual font rendered, with no silent fallback",
+        "License permits this use"
+      ],
+      "worked_example": {
+        "input": "A dense report with long tables",
+        "choose": "One family with tabular figures",
+        "avoid": "A display face for table cells",
+        "reason": "Scanning numbers needs stable widths"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "motion-purpose",
+      "title": "Motion with a reason",
+      "keywords": "animation motion transition duration easing reduced",
+      "status": "proposed",
+      "when": "A change of state or place is hard to follow without motion.",
+      "avoid_when": "Motion would only decorate, or would delay a repeated action.",
+      "inputs": [
+        "The state change",
+        "How often it repeats",
+        "Device limits"
+      ],
+      "steps": [
+        "Name what the motion explains",
+        "Keep frequent feedback brief; let large moves take a little longer",
+        "Animate transform and opacity where possible",
+        "Provide a reduced-motion path"
+      ],
+      "checks": [
+        "Same meaning with motion off",
+        "Interrupting does not break state",
+        "Smooth on a modest device"
+      ],
+      "worked_example": {
+        "input": "A panel opens from a list row",
+        "choose": "A short move from that row",
+        "avoid": "A long bounce on every open",
+        "reason": "Origin explains the relation, and repetition punishes delay"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "stack-fit",
+      "title": "Fit the installed stack",
+      "keywords": "framework stack react vue version component library",
+      "status": "proposed",
+      "when": "Adapting a design into an existing codebase.",
+      "avoid_when": "There is no codebase yet.",
+      "inputs": [
+        "Installed versions",
+        "Existing components and tokens",
+        "Platform conventions"
+      ],
+      "steps": [
+        "Read the installed versions and current components first",
+        "Reuse existing primitives before adding any",
+        "Check any snippet's dependencies before adapting it"
+      ],
+      "checks": [
+        "No unrequested dependency",
+        "Uses the project's tokens",
+        "Works on the version actually installed"
+      ],
+      "worked_example": {
+        "input": "Add a dialog to an app with a component library",
+        "choose": "Use its dialog and tokens",
+        "avoid": "Paste a generic snippet",
+        "reason": "The local primitive already handles focus and theme"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "wait-and-result",
+      "title": "Waiting and result feedback",
+      "keywords": "loading progress skeleton success error toast feedback",
+      "status": "proposed",
+      "when": "An action takes noticeable time or may fail.",
+      "avoid_when": "The result is instant and visible in place.",
+      "inputs": [
+        "Typical and worst durations",
+        "Failure modes",
+        "What must stay usable"
+      ],
+      "steps": [
+        "Acknowledge the action immediately",
+        "Show progress in the place the result will appear",
+        "Report the outcome where the person is looking, with a next step on failure"
+      ],
+      "checks": [
+        "Double submit prevented",
+        "Failure keeps the entered work",
+        "Reserved space avoids layout jumps"
+      ],
+      "worked_example": {
+        "input": "Saving a long form",
+        "choose": "Button shows progress, and errors sit by their fields",
+        "avoid": "A blocking spinner, then a vanishing toast",
+        "reason": "People need to know what happened and what to do next"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "touch-and-input",
+      "title": "Touch and input reach",
+      "keywords": "touch target mobile tap gesture hover keyboard",
+      "status": "proposed",
+      "when": "Controls will be used on touch or by mixed input.",
+      "avoid_when": "Pointer-only desktop tools with a stated constraint.",
+      "inputs": [
+        "Devices",
+        "Primary actions",
+        "Density needs"
+      ],
+      "steps": [
+        "Keep touch targets near 44 by 44 points, even when the visible mark is smaller",
+        "Separate adjacent risky actions",
+        "Never leave an action available on hover only",
+        "Offer a visible path for any gesture"
+      ],
+      "checks": [
+        "Reachable with one hand where expected",
+        "Visible focus",
+        "Works at 200% zoom"
+      ],
+      "worked_example": {
+        "input": "A row with edit and delete icons",
+        "choose": "Enlarged hit areas, with delete apart and undoable",
+        "avoid": "Two tiny adjacent icons",
+        "reason": "Mis-taps are common and costly"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    }
+  ]
+}

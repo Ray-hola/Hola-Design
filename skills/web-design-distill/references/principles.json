@@ -1,0 +1,971 @@
+{
+ "schema_version": 3,
+ "purpose": "Original project questions for design review, written in our own words from general design knowledge. Scope labels are project annotations. Nothing here is a quotation or a validated rule.",
+ "adoption_values": {
+  "conditional": "Conditional aid; verify in the current task.",
+  "hypothesis": "Expressive or behavioral candidate; compare, do not prescribe.",
+  "context_only": "Physical or domain finding; screen use needs separate evidence.",
+  "research_only": "Recognize in review; not a generation default."
+ },
+ "items": [
+  {
+   "id": "vital-few",
+   "name": "Vital few",
+   "group": "purpose",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "priorities pareto effort focus",
+   "ask": "Which few parts carry most of the value here, and do they get most of the attention?",
+   "limit": "Usage data can shift the answer; rarely used safety paths still matter."
+  },
+  {
+   "id": "fit-to-purpose",
+   "name": "Fit to purpose",
+   "group": "purpose",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "function form purpose intent",
+   "ask": "What job does this form do for this audience, and would a plainer form do it as well?",
+   "limit": "Purpose can include delight or identity; do not reduce it to utility."
+  },
+  {
+   "id": "worth-the-cost",
+   "name": "Worth the cost",
+   "group": "purpose",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "cost benefit effort value",
+   "ask": "Does what the person gains justify the attention or effort this asks of them?",
+   "limit": "Estimate from the actual task, not from a general rule."
+  },
+  {
+   "id": "named-audience",
+   "name": "Named audience",
+   "group": "purpose",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "audience persona user needs",
+   "ask": "Who specifically is this for, and what would they do differently from the next audience?",
+   "limit": "A sketched audience is an assumption until checked."
+  },
+  {
+   "id": "worn-paths",
+   "name": "Worn paths",
+   "group": "purpose",
+   "adoption": "conditional",
+   "scenes": [
+    "ui",
+    "web"
+   ],
+   "keywords": "behavior actual usage shortcut",
+   "ask": "What route do people actually take, and is the design fighting it?",
+   "limit": "Observed habit may still be unsafe; check before paving it."
+  },
+  {
+   "id": "visible-order",
+   "name": "Visible order",
+   "group": "structure",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "hierarchy order importance levels",
+   "ask": "Can someone tell what comes first, next and last without reading everything?",
+   "limit": "Rank from content priority, not from a default template."
+  },
+  {
+   "id": "first-foothold",
+   "name": "First foothold",
+   "group": "structure",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "entry point orientation start",
+   "ask": "Where does attention land first, and does that spot explain where to go?",
+   "limit": "A loud entry with no follow-through still fails."
+  },
+  {
+   "id": "reveal-on-need",
+   "name": "Reveal on need",
+   "group": "structure",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "progressive disclosure layering detail depth",
+   "ask": "What can wait until asked for, and is it easy to find when it is?",
+   "limit": "Do not hide what the decision depends on."
+  },
+  {
+   "id": "lead-with-the-point",
+   "name": "Lead with the point",
+   "group": "structure",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "web"
+   ],
+   "keywords": "conclusion summary first pyramid",
+   "ask": "Would the reader get the main claim if they stopped after the opening?",
+   "limit": "Suspense can be the point in narrative work."
+  },
+  {
+   "id": "sort-by-question",
+   "name": "Sort by question",
+   "group": "structure",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "organize category time location scale",
+   "ask": "Is this ordered by how the reader looks things up: time, place, category, rank or letter?",
+   "limit": "One arrangement rarely serves every lookup."
+  },
+  {
+   "id": "narrative-arc",
+   "name": "Narrative arc",
+   "group": "structure",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "web"
+   ],
+   "keywords": "story sequence tension",
+   "ask": "Does each step give a reason to read the next?",
+   "limit": "Do not force a story onto reference material."
+  },
+  {
+   "id": "know-where-you-are",
+   "name": "Know where you are",
+   "group": "structure",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "navigation wayfinding location return",
+   "ask": "Can someone tell where they are, where they can go, and how to get back?",
+   "limit": "Very short pieces may not need any of this."
+  },
+  {
+   "id": "swappable-parts",
+   "name": "Swappable parts",
+   "group": "structure",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "modular components reuse grid",
+   "ask": "Which pieces can change independently without breaking neighbors?",
+   "limit": "Modules that differ in purpose should stay separate."
+  },
+  {
+   "id": "line-up",
+   "name": "Line up",
+   "group": "relations",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "alignment edges optical area",
+   "ask": "Do edges and centers relate on purpose, judged by eye rather than bounding box?",
+   "limit": "Optical correction is not equal widths; judge the render."
+  },
+  {
+   "id": "near-means-related",
+   "name": "Near means related",
+   "group": "relations",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "proximity grouping spacing gestalt",
+   "ask": "Does spacing alone show what belongs together?",
+   "limit": "Containers are not wrong, but test spacing first."
+  },
+  {
+   "id": "alike-means-related",
+   "name": "Alike means related",
+   "group": "relations",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "similarity repeat consistency gestalt",
+   "ask": "Do things that look alike behave alike, and the reverse?",
+   "limit": "Consistency is not sameness; meaningful difference should show."
+  },
+  {
+   "id": "shared-frame",
+   "name": "Shared frame",
+   "group": "relations",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "connected enclosure region common",
+   "ask": "Does a line, region or color link what the content links?",
+   "limit": "Too many frames compete with the content."
+  },
+  {
+   "id": "reads-as-whole",
+   "name": "Reads as a whole",
+   "group": "relations",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "web"
+   ],
+   "keywords": "closure simplicity continuation gestalt",
+   "ask": "Will the eye complete and follow the shape you intend?",
+   "limit": "Check at real size; thin implied shapes can vanish."
+  },
+  {
+   "id": "figure-and-ground",
+   "name": "Figure and ground",
+   "group": "relations",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "figure ground contrast separation",
+   "ask": "Is it clear what is in front and what is behind?",
+   "limit": "Deliberate ambiguity is allowed if it is the idea."
+  },
+  {
+   "id": "color-with-a-job",
+   "name": "Color with a job",
+   "group": "relations",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "color role contrast meaning accessibility",
+   "ask": "What does each color signal, and does the signal survive without hue?",
+   "limit": "Cultural meaning varies; measure contrast on the real surface."
+  },
+  {
+   "id": "emphasis-budget",
+   "name": "Emphasis budget",
+   "group": "relations",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "highlight emphasis accent contrast",
+   "ask": "Is only a small share emphasized, so emphasis still works?",
+   "limit": "Set the amount from the content, not a fixed ratio."
+  },
+  {
+   "id": "odd-one-out",
+   "name": "Odd one out",
+   "group": "relations",
+   "adoption": "hypothesis",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "distinctive memorable isolation accent",
+   "ask": "What single difference should be remembered, and is it the only one?",
+   "limit": "Compare against a plainer candidate."
+  },
+  {
+   "id": "stable-appearance",
+   "name": "Stable appearance",
+   "group": "relations",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "constancy same object size perspective",
+   "ask": "Does one thing stay recognizable across sizes and states?",
+   "limit": "Allow scale-specific redrawing when a form breaks."
+  },
+  {
+   "id": "conflict-slows-reading",
+   "name": "Conflict slows reading",
+   "group": "relations",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "interference mismatch color label",
+   "ask": "Does any label, color or position contradict what it stands for?",
+   "limit": "Test with real labels, not lorem text."
+  },
+  {
+   "id": "balance-by-weight",
+   "name": "Balance by weight",
+   "group": "relations",
+   "adoption": "hypothesis",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "symmetry balance composition thirds ratio",
+   "ask": "Is the balance something you can defend from this composition, not from a formula?",
+   "limit": "Grid and ratio formulas are starting points, never proof."
+  },
+  {
+   "id": "full-or-empty",
+   "name": "Full or empty",
+   "group": "relations",
+   "adoption": "hypothesis",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "density negative space sparse dense",
+   "ask": "Does this density suit the audience, rather than a habit of airiness or cramming?",
+   "limit": "Density carries meaning in both directions."
+  },
+  {
+   "id": "legible-letters",
+   "name": "Legible letters",
+   "group": "type",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "legibility size contrast typeface",
+   "ask": "Can each letter be told apart at the real size, surface and distance?",
+   "limit": "Print-era numbers are not screen thresholds; test the render."
+  },
+  {
+   "id": "readable-sentences",
+   "name": "Readable sentences",
+   "group": "type",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "readability wording measure leading plain",
+   "ask": "Do the wording, line length and spacing suit this reader?",
+   "limit": "Formula scores do not prove comprehension."
+  },
+  {
+   "id": "cut-what-adds-nothing",
+   "name": "Cut what adds nothing",
+   "group": "reduction",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "signal noise simplicity remove",
+   "ask": "What can go with nothing lost, and what does each remaining part add?",
+   "limit": "Simple is not always empty; do not cut needed cues."
+  },
+  {
+   "id": "simplest-sufficient",
+   "name": "Simplest sufficient",
+   "group": "reduction",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "simplest occam minimal",
+   "ask": "Between options that work equally, which needs the fewest parts?",
+   "limit": "Only applies once both truly work."
+  },
+  {
+   "id": "idea-per-unit",
+   "name": "Idea per unit",
+   "group": "reduction",
+   "adoption": "hypothesis",
+   "scenes": [
+    "ppt",
+    "web"
+   ],
+   "keywords": "density single message layered meaning",
+   "ask": "How many ideas does this element carry, and can the viewer reach them?",
+   "limit": "Dense layered meaning can be rewarding; compare candidates."
+  },
+  {
+   "id": "motion-shows-relation",
+   "name": "Motion shows relation",
+   "group": "motion",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "common fate movement group transition",
+   "ask": "Does moving together mean belonging together, and can the change be traced?",
+   "limit": "Respect reduced-motion settings; motion is never the only cue."
+  },
+  {
+   "id": "signals-how-to-use",
+   "name": "Signals how to use",
+   "group": "operation",
+   "adoption": "conditional",
+   "scenes": [
+    "ui",
+    "web"
+   ],
+   "keywords": "affordance clickable control cue",
+   "ask": "Does it look like what it does before anyone touches it?",
+   "limit": "Flat conventions may be learned; test with the audience."
+  },
+  {
+   "id": "controls-match-effect",
+   "name": "Controls match effect",
+   "group": "operation",
+   "adoption": "conditional",
+   "scenes": [
+    "ui",
+    "web"
+   ],
+   "keywords": "mapping control layout effect",
+   "ask": "Do position and direction of a control predict its result?",
+   "limit": "Platform convention can outweigh geometry."
+  },
+  {
+   "id": "shows-what-is-possible",
+   "name": "Shows what is possible",
+   "group": "operation",
+   "adoption": "conditional",
+   "scenes": [
+    "ui",
+    "web"
+   ],
+   "keywords": "visibility status options state",
+   "ask": "Can people see the current state and the available actions?",
+   "limit": "Do not expose everything at equal weight."
+  },
+  {
+   "id": "recognize-not-recall",
+   "name": "Recognize, not recall",
+   "group": "operation",
+   "adoption": "conditional",
+   "scenes": [
+    "ui",
+    "web"
+   ],
+   "keywords": "recognition memory options defaults",
+   "ask": "Are choices on screen rather than held in memory?",
+   "limit": "Experts may prefer commands; offer both when it matters."
+  },
+  {
+   "id": "fits-their-model",
+   "name": "Fits their model",
+   "group": "operation",
+   "adoption": "conditional",
+   "scenes": [
+    "ui",
+    "web"
+   ],
+   "keywords": "mental model expectation conventions",
+   "ask": "Does it behave the way people already believe it works?",
+   "limit": "Familiarity is a default, not a ceiling on invention."
+  },
+  {
+   "id": "reachable-targets",
+   "name": "Reachable targets",
+   "group": "operation",
+   "adoption": "conditional",
+   "scenes": [
+    "ui",
+    "web"
+   ],
+   "keywords": "fitts target size distance pointer touch",
+   "ask": "Are frequent or urgent targets large and close, and risky ones further away?",
+   "limit": "Measure on the real input device."
+  },
+  {
+   "id": "fewer-choices-faster",
+   "name": "Fewer choices, faster",
+   "group": "operation",
+   "adoption": "conditional",
+   "scenes": [
+    "ui",
+    "web"
+   ],
+   "keywords": "hick choices menu decision time",
+   "ask": "Does the number of options slow a repeated, simple decision?",
+   "limit": "Do not turn this into a menu-count limit; grouping can help more."
+  },
+  {
+   "id": "limit-wrong-moves",
+   "name": "Limit wrong moves",
+   "group": "operation",
+   "adoption": "conditional",
+   "scenes": [
+    "ui",
+    "web"
+   ],
+   "keywords": "constraint prevention validation",
+   "ask": "Can invalid actions be made impossible rather than reported afterwards?",
+   "limit": "Do not block legitimate edge cases."
+  },
+  {
+   "id": "easy-to-undo",
+   "name": "Easy to undo",
+   "group": "operation",
+   "adoption": "conditional",
+   "scenes": [
+    "ui",
+    "web"
+   ],
+   "keywords": "forgiveness undo recovery errors confirmation",
+   "ask": "What happens after a mistake, and how much effort does recovery take?",
+   "limit": "Reserve confirmation for what cannot be undone."
+  },
+  {
+   "id": "user-in-charge",
+   "name": "User in charge",
+   "group": "operation",
+   "adoption": "conditional",
+   "scenes": [
+    "ui",
+    "web"
+   ],
+   "keywords": "control autonomy cancel settings",
+   "ask": "Can people pause, leave or adjust without losing work?",
+   "limit": "More options can also mean more load."
+  },
+  {
+   "id": "mental-and-physical-load",
+   "name": "Mental and physical load",
+   "group": "operation",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "cognitive load effort steps",
+   "ask": "How much must someone remember, compute or do to finish?",
+   "limit": "Count on the actual path, not on the sketch."
+  },
+  {
+   "id": "expect-bad-input",
+   "name": "Expect bad input",
+   "group": "robustness",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "garbage input validation errors data",
+   "ask": "What happens with long, empty, malformed or missing content?",
+   "limit": "Test real extremes, and do not invent customer data."
+  },
+  {
+   "id": "margin-for-the-unknown",
+   "name": "Margin for the unknown",
+   "group": "robustness",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "safety margin stress scale tolerance",
+   "ask": "How far past normal use does this keep working?",
+   "limit": "Spend margin where failure is costly."
+  },
+  {
+   "id": "weakest-point",
+   "name": "Weakest point",
+   "group": "robustness",
+   "adoption": "conditional",
+   "scenes": [
+    "ui",
+    "web"
+   ],
+   "keywords": "weak link failure backup redundancy",
+   "ask": "Which single failure takes the rest down, and is there a fallback?",
+   "limit": "Some failures should fail loudly on purpose."
+  },
+  {
+   "id": "does-not-simply-scale",
+   "name": "Does not simply scale",
+   "group": "robustness",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "scaling content counts sizes breakpoints",
+   "ask": "What breaks when size, count or language changes?",
+   "limit": "Check each size that actually ships."
+  },
+  {
+   "id": "small-chunks",
+   "name": "Small chunks",
+   "group": "learning",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "chunking groups memory steps",
+   "ask": "Is the material split into units someone can hold and check?",
+   "limit": "Do not turn memory research into a hard count limit."
+  },
+  {
+   "id": "build-on-what-they-know",
+   "name": "Build on what they know",
+   "group": "learning",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "familiar bridge prior knowledge organizer",
+   "ask": "What known idea can introduce the unknown one?",
+   "limit": "Check the bridge exists for this audience."
+  },
+  {
+   "id": "learn-by-steps",
+   "name": "Learn by steps",
+   "group": "learning",
+   "adoption": "conditional",
+   "scenes": [
+    "ui",
+    "web"
+   ],
+   "keywords": "shaping onboarding progressive practice",
+   "ask": "Does complexity arrive only after the previous step works?",
+   "limit": "Experts need a way to skip."
+  },
+  {
+   "id": "engage-to-remember",
+   "name": "Engage to remember",
+   "group": "learning",
+   "adoption": "hypothesis",
+   "scenes": [
+    "ppt",
+    "web"
+   ],
+   "keywords": "depth memory repetition picture story",
+   "ask": "Does the viewer have to do something with the idea?",
+   "limit": "Recall claims need a test; do not assert uplift."
+  },
+  {
+   "id": "borrow-with-care",
+   "name": "Borrow with care",
+   "group": "transfer",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "mimicry borrow metaphor analogy",
+   "ask": "What does the borrowed form promise, and does this deliver it?",
+   "limit": "Copying a surface without the reason fails the layer test."
+  },
+  {
+   "id": "physical-analogy-limit",
+   "name": "Physical analogy limit",
+   "group": "transfer",
+   "adoption": "context_only",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "space architecture environment physical",
+   "ask": "Is a physical-space finding being applied to a screen without evidence?",
+   "limit": "Needs separate screen evidence before use."
+  },
+  {
+   "id": "beauty-buys-patience",
+   "name": "Beauty buys patience",
+   "group": "judgment",
+   "adoption": "conditional",
+   "scenes": [
+    "ui",
+    "web"
+   ],
+   "keywords": "aesthetic usability perception halo",
+   "ask": "Is appeal hiding a problem in testing?",
+   "limit": "Perceived ease is not measured ease."
+  },
+  {
+   "id": "compare-fairly",
+   "name": "Compare fairly",
+   "group": "judgment",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "comparison baseline framing charts",
+   "ask": "Are the things compared on the same basis and the same scale?",
+   "limit": "Framing decides meaning; show the base."
+  },
+  {
+   "id": "seen-is-not-noticed",
+   "name": "Seen is not noticed",
+   "group": "judgment",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "attention blindness review miss",
+   "ask": "What could a reviewer overlook because they were looking for something else?",
+   "limit": "Use a fresh look or a list from the render."
+  },
+  {
+   "id": "what-they-say-vs-do",
+   "name": "What they say vs do",
+   "group": "judgment",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "preference performance testing evidence",
+   "ask": "Are stated preference and measured performance kept apart?",
+   "limit": "Both can matter; report them separately."
+  },
+  {
+   "id": "hoped-for-results",
+   "name": "Hoped-for results",
+   "group": "judgment",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "expectation bias tester author",
+   "ask": "Could the reviewer's expectations be producing the result?",
+   "limit": "Declare when the author is also the tester."
+  },
+  {
+   "id": "observation-changes-it",
+   "name": "Observation changes it",
+   "group": "judgment",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "measurement observer test bias",
+   "ask": "Is the measurement changing what it measures?",
+   "limit": "State the limit rather than dropping the test."
+  },
+  {
+   "id": "too-many-owners",
+   "name": "Too many owners",
+   "group": "judgment",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "committee decision consensus ownership",
+   "ask": "Is the result an average of opinions, with no one able to defend it?",
+   "limit": "Consensus may be right for safety or standards."
+  },
+  {
+   "id": "own-idea-bias",
+   "name": "Own-idea bias",
+   "group": "judgment",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "invented here reuse pride",
+   "ask": "Is an existing solution being rejected only because it is not ours?",
+   "limit": "Reuse still needs rights and fit checks."
+  },
+  {
+   "id": "build-to-learn",
+   "name": "Build to learn",
+   "group": "process",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "prototype iteration feedback cycle",
+   "ask": "What is the cheapest version that answers this question?",
+   "limit": "A prototype passing is not the product passing."
+  },
+  {
+   "id": "good-enough-stop",
+   "name": "Good enough stop",
+   "group": "process",
+   "adoption": "conditional",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "satisficing stop time constraint",
+   "ask": "Is stopping here honest about what remains unverified?",
+   "limit": "State the residual risk."
+  },
+  {
+   "id": "feelings-as-a-hypothesis",
+   "name": "Feelings as a hypothesis",
+   "group": "appeal",
+   "adoption": "hypothesis",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "emotion warmth nature face character archetype",
+   "ask": "What feeling is intended, and how will you check it arrived?",
+   "limit": "Compare candidates; do not prescribe a look."
+  },
+  {
+   "id": "familiar-yet-new",
+   "name": "Familiar yet new",
+   "group": "appeal",
+   "adoption": "hypothesis",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "novelty familiarity advanced acceptable exposure",
+   "ask": "Is this new enough to notice, yet recognizable enough to accept?",
+   "limit": "Originality can justify unfamiliar form when it works."
+  },
+  {
+   "id": "sticks-in-memory",
+   "name": "Sticks in memory",
+   "group": "appeal",
+   "adoption": "hypothesis",
+   "scenes": [
+    "ppt",
+    "web"
+   ],
+   "keywords": "memorable concrete surprise simple",
+   "ask": "What concrete thing would someone repeat later?",
+   "limit": "Working surfaces may rightly be forgettable."
+  },
+  {
+   "id": "imperfect-on-purpose",
+   "name": "Imperfect on purpose",
+   "group": "appeal",
+   "adoption": "hypothesis",
+   "scenes": [
+    "ppt",
+    "web"
+   ],
+   "keywords": "texture imperfection craft material",
+   "ask": "Does irregularity carry meaning, or is it a faked surface?",
+   "limit": "Faked material fails the layer test."
+  },
+  {
+   "id": "immersion-and-focus",
+   "name": "Immersion and focus",
+   "group": "appeal",
+   "adoption": "hypothesis",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "immersion flow distraction attention",
+   "ask": "What must vanish so attention stays on the work?",
+   "limit": "Immersion cannot hide a broken task."
+  },
+  {
+   "id": "persuasion-ethics",
+   "name": "Persuasion ethics",
+   "group": "bias",
+   "adoption": "research_only",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "nudge scarcity priming framing dark pattern",
+   "ask": "Would this cue still be acceptable if the person could see how it works?",
+   "limit": "Recognize it in review; not a generation default."
+  },
+  {
+   "id": "appearance-bias",
+   "name": "Appearance bias",
+   "group": "bias",
+   "adoption": "research_only",
+   "scenes": [
+    "ppt",
+    "ui",
+    "web"
+   ],
+   "keywords": "attractiveness stereotype faces gender bias",
+   "ask": "Is imagery relying on a stereotype or a contested claim about people?",
+   "limit": "Do not turn these claims into casting or styling rules."
+  }
+ ]
+}

@@ -1,0 +1,89 @@
+{
+  "scene": "ppt",
+  "distillation": [
+    {
+      "id": "traceability",
+      "required": true,
+      "intent": "Each source rule traces to a locator and evidence status."
+    },
+    {
+      "id": "fidelity",
+      "required": true,
+      "intent": "Rules match inspected sources; inference is not presented as observation."
+    },
+    {
+      "id": "domain_relations",
+      "required": true,
+      "intent": "Domain structures and relationships have supporting evidence."
+    },
+    {
+      "id": "scope",
+      "required": true,
+      "intent": "State the accepted scope, conditions, exceptions and unverified boundaries."
+    }
+  ],
+  "design": [
+    {
+      "id": "message",
+      "required": true,
+      "intent": "The central claim is accurate and understandable."
+    },
+    {
+      "id": "sequence",
+      "required": true,
+      "intent": "Cross-slide organization supports presentation or self-reading."
+    },
+    {
+      "id": "content_fit",
+      "required": true,
+      "intent": "Real content fits the chosen page role and capacity."
+    },
+    {
+      "id": "visual",
+      "required": true,
+      "intent": "Type, spacing, hierarchy, color and graphics support applicable rules and reading."
+    },
+    {
+      "id": "render",
+      "required": true,
+      "intent": "Inspect actual slide renders for unintended clipping, overlap and missing glyphs."
+    },
+    {
+      "id": "integrity",
+      "required": true,
+      "intent": "Declared objects, the ground, every display context and the exported file stay complete and intact: nothing is lost, interrupted or occluded unintentionally, and the whole holds after edits."
+    },
+    {
+      "id": "native_file",
+      "required": false,
+      "intent": "Native delivery opens and required elements remain editable."
+    },
+    {
+      "id": "motion",
+      "required": false,
+      "intent": "Required transitions and animation support the presentation purpose."
+    }
+  ],
+  "feedback": [
+    {
+      "id": "new_task",
+      "required": true,
+      "intent": "Produce an actual new-content/task artifact that can expose transfer gaps."
+    },
+    {
+      "id": "attribution",
+      "required": true,
+      "intent": "Match failure causes to the repair layer, or explain why no failure was found."
+    },
+    {
+      "id": "regression",
+      "required": true,
+      "intent": "Recheck the original failure and previously valid affected behavior after repair."
+    },
+    {
+      "id": "scope",
+      "required": true,
+      "intent": "State the accepted scope, conditions, exceptions and unverified boundaries."
+    }
+  ]
+}

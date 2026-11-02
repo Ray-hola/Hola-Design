@@ -1,0 +1,440 @@
+{
+  "scene": "web",
+  "profile_collections": [
+    "visual_rules",
+    "sections",
+    "page_patterns",
+    "responsive_rules",
+    "typefaces",
+    "design_cases"
+  ],
+  "meaning": "Newly authored generic proposals; source-derived profile evidence stays separate",
+  "cards": [
+    {
+      "id": "orientation",
+      "title": "Orientation",
+      "keywords": "hero entry orientation",
+      "status": "proposed",
+      "when": "New visitors need to identify the offer and next step.",
+      "avoid_when": "The task enters operations directly without introduction.",
+      "inputs": [
+        "Actual offer",
+        "Audience",
+        "Available next step"
+      ],
+      "steps": [
+        "State the concrete object and value",
+        "Choose title/media relations by content",
+        "Connect action to its actual destination"
+      ],
+      "checks": [
+        "Accurate opening",
+        "No invented data or endorsements"
+      ],
+      "worked_example": {
+        "input": "Introduce archival research support",
+        "choose": "Explain real support types and contact path",
+        "avoid": "Substitute abstract slogans for the service",
+        "reason": "Structure should identify the offer"
+      },
+      "mechanism_sources": [
+        "Leonxlnx/taste-skill",
+        "pbakaus/impeccable",
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "compare-options",
+      "title": "Compare options",
+      "keywords": "comparison pricing options",
+      "status": "proposed",
+      "when": "Two or more actual alternatives exist.",
+      "avoid_when": "There are no real alternatives or shared criteria.",
+      "inputs": [
+        "Actual options",
+        "Differences and limits",
+        "Selection conditions"
+      ],
+      "steps": [
+        "Find common dimensions",
+        "Adapt structure to the real count",
+        "Emphasize a recommendation only with reasons"
+      ],
+      "checks": [
+        "Complete real options",
+        "Comparison remains possible on narrow screens"
+      ],
+      "worked_example": {
+        "input": "A three-option reference but two actual offers",
+        "choose": "Keep two offers and adapt the structure",
+        "avoid": "Invent a third to fill columns",
+        "reason": "Template geometry cannot create business content"
+      },
+      "mechanism_sources": [
+        "Leonxlnx/taste-skill",
+        "pbakaus/impeccable",
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "case-evidence",
+      "title": "Case evidence",
+      "keywords": "case study evidence proof",
+      "status": "proposed",
+      "when": "A real citeable case supports the claim.",
+      "avoid_when": "Sources or permission to use customer data are absent.",
+      "inputs": [
+        "Facts",
+        "Permission scope",
+        "Problem and result"
+      ],
+      "steps": [
+        "Separate fact, inference and scope",
+        "Organize by problem and result",
+        "Retain enough context"
+      ],
+      "checks": [
+        "Metrics match sources",
+        "No unsupported effect guarantees"
+      ],
+      "worked_example": {
+        "input": "A small-sample research case",
+        "choose": "State sample and result limits",
+        "avoid": "Invent growth percentages",
+        "reason": "A proof structure cannot create missing proof"
+      },
+      "mechanism_sources": [
+        "Leonxlnx/taste-skill",
+        "pbakaus/impeccable",
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "faq",
+      "title": "Resolve questions",
+      "keywords": "faq questions objection",
+      "status": "proposed",
+      "when": "Real questions block visitor decisions.",
+      "avoid_when": "The goal is merely extending page length.",
+      "inputs": [
+        "Actual questions",
+        "Accurate answers",
+        "Escalation needs"
+      ],
+      "steps": [
+        "Choose decision-relevant questions",
+        "Keep short answers scannable",
+        "Check semantics/keyboard for collapsible content"
+      ],
+      "checks": [
+        "Answers supported",
+        "Expanded content accessible"
+      ],
+      "worked_example": {
+        "input": "How long delivery takes",
+        "choose": "Give actual conditions and contact route",
+        "avoid": "Invent eight questions to fill a section",
+        "reason": "FAQ should resolve uncertainty"
+      },
+      "mechanism_sources": [
+        "Leonxlnx/taste-skill",
+        "pbakaus/impeccable",
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "reading",
+      "title": "Long-form reading",
+      "keywords": "article reading typography long form",
+      "status": "proposed",
+      "when": "Understanding continuous content is the main task.",
+      "avoid_when": "The main task is acting on many objects.",
+      "inputs": [
+        "Text and heading structure",
+        "Figure captions",
+        "Reading language"
+      ],
+      "steps": [
+        "Follow article structure",
+        "Check line lengths and spacing with real language",
+        "Accommodate captions, links and long identifiers"
+      ],
+      "checks": [
+        "Readable body",
+        "No horizontal overflow or stranded headings"
+      ],
+      "worked_example": {
+        "input": "Mixed-language research text",
+        "choose": "Check long links, captions and narrow wrapping",
+        "avoid": "Scale body-text screenshots for mobile",
+        "reason": "Adaptation needs actual text"
+      },
+      "mechanism_sources": [
+        "Leonxlnx/taste-skill",
+        "pbakaus/impeccable",
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "responsive-adapt",
+      "title": "Responsive content",
+      "keywords": "responsive mobile narrow adaptation long text",
+      "status": "proposed",
+      "when": "Several target sizes and content variations matter.",
+      "avoid_when": "A single window is being used to claim responsive success.",
+      "inputs": [
+        "Target widths",
+        "Real long/short content",
+        "Required media"
+      ],
+      "steps": [
+        "Preserve section purpose while changing relations",
+        "Check the same subject across widths",
+        "Remove/reorganize absent content with an explicit proposal"
+      ],
+      "checks": [
+        "Actual widths and overflow",
+        "Navigation/actions reachable"
+      ],
+      "worked_example": {
+        "input": "Two long service offers on narrow screens",
+        "choose": "Inspect two wide columns and one narrow column",
+        "avoid": "Shrink the desktop screenshot",
+        "reason": "Responsive design changes relationships"
+      },
+      "mechanism_sources": [
+        "Leonxlnx/taste-skill",
+        "pbakaus/impeccable",
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "chart-choice",
+      "title": "Chart from the question",
+      "keywords": "chart graph data visualization trend comparison share",
+      "status": "proposed",
+      "when": "Numbers must answer a specific question.",
+      "avoid_when": "One figure or a short table already answers it.",
+      "inputs": [
+        "The question asked",
+        "Data shape and volume",
+        "Reading conditions"
+      ],
+      "steps": [
+        "Write the question the reader brings",
+        "Pick the form that answers it: line for change, bars for ranking, table for exact lookup",
+        "Label directly where possible, and do not rely on hue alone"
+      ],
+      "checks": [
+        "Readable in grayscale",
+        "Axis baseline does not exaggerate",
+        "Exact values reachable without hover"
+      ],
+      "worked_example": {
+        "input": "Five regions across twelve months",
+        "choose": "Lines with direct labels",
+        "avoid": "A pie for each month",
+        "reason": "Change over time is the question, and pies hide it"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "color-roles",
+      "title": "Color by role",
+      "keywords": "color palette contrast theme dark semantic token",
+      "status": "proposed",
+      "when": "Defining or extending colors for an interface.",
+      "avoid_when": "The reference already has measured colors covering the need.",
+      "inputs": [
+        "Reference colors",
+        "Surfaces used",
+        "Status meanings"
+      ],
+      "steps": [
+        "Name roles before values: surface, text, border, accent, status",
+        "Measure text and control contrast on each actual surface",
+        "Give status a second cue besides color",
+        "Treat dark mode as its own set of decisions, not an inversion"
+      ],
+      "checks": [
+        "Body text at 4.5:1 or better, large text and controls at 3:1 or better",
+        "Status understood without hue",
+        "Accent still rare enough to mean something"
+      ],
+      "worked_example": {
+        "input": "Add an error state to a muted palette",
+        "choose": "A distinct error role plus an icon and message",
+        "avoid": "Red text alone at low contrast",
+        "reason": "Hue alone fails some viewers"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "type-pairing",
+      "title": "Choosing typefaces",
+      "keywords": "font typeface pairing typography licensing",
+      "status": "proposed",
+      "when": "No reference type governs and a typeface must be chosen.",
+      "avoid_when": "Source typography already answers the role.",
+      "inputs": [
+        "Text roles",
+        "Languages and glyphs needed",
+        "Licensing and delivery limits"
+      ],
+      "steps": [
+        "List roles first, and use one family unless a role needs another",
+        "Set real copy in candidates at real sizes",
+        "Check glyph coverage, weights and license before committing"
+      ],
+      "checks": [
+        "Roles differ at a glance",
+        "Actual font rendered, with no silent fallback",
+        "License permits this use"
+      ],
+      "worked_example": {
+        "input": "A dense report with long tables",
+        "choose": "One family with tabular figures",
+        "avoid": "A display face for table cells",
+        "reason": "Scanning numbers needs stable widths"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "motion-purpose",
+      "title": "Motion with a reason",
+      "keywords": "animation motion transition duration easing reduced",
+      "status": "proposed",
+      "when": "A change of state or place is hard to follow without motion.",
+      "avoid_when": "Motion would only decorate, or would delay a repeated action.",
+      "inputs": [
+        "The state change",
+        "How often it repeats",
+        "Device limits"
+      ],
+      "steps": [
+        "Name what the motion explains",
+        "Keep frequent feedback brief; let large moves take a little longer",
+        "Animate transform and opacity where possible",
+        "Provide a reduced-motion path"
+      ],
+      "checks": [
+        "Same meaning with motion off",
+        "Interrupting does not break state",
+        "Smooth on a modest device"
+      ],
+      "worked_example": {
+        "input": "A panel opens from a list row",
+        "choose": "A short move from that row",
+        "avoid": "A long bounce on every open",
+        "reason": "Origin explains the relation, and repetition punishes delay"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "stack-fit",
+      "title": "Fit the installed stack",
+      "keywords": "framework stack react vue version component library",
+      "status": "proposed",
+      "when": "Adapting a design into an existing codebase.",
+      "avoid_when": "There is no codebase yet.",
+      "inputs": [
+        "Installed versions",
+        "Existing components and tokens",
+        "Platform conventions"
+      ],
+      "steps": [
+        "Read the installed versions and current components first",
+        "Reuse existing primitives before adding any",
+        "Check any snippet's dependencies before adapting it"
+      ],
+      "checks": [
+        "No unrequested dependency",
+        "Uses the project's tokens",
+        "Works on the version actually installed"
+      ],
+      "worked_example": {
+        "input": "Add a dialog to an app with a component library",
+        "choose": "Use its dialog and tokens",
+        "avoid": "Paste a generic snippet",
+        "reason": "The local primitive already handles focus and theme"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "landing-order",
+      "title": "Landing page order",
+      "keywords": "landing hero sections cta conversion pricing proof",
+      "status": "proposed",
+      "when": "Planning a persuasive page and no reference order governs.",
+      "avoid_when": "The reference's own order applies, or the page is a reference or doc.",
+      "inputs": [
+        "What the visitor must decide",
+        "Objections",
+        "Real proof available"
+      ],
+      "steps": [
+        "List the visitor's questions in the order they arise",
+        "Give each section one question to answer",
+        "Put the action where a decision becomes possible, and repeat only where it helps",
+        "Use only proof you actually have"
+      ],
+      "checks": [
+        "Each section answers something",
+        "The action makes sense when it appears",
+        "No invented testimonials or numbers"
+      ],
+      "worked_example": {
+        "input": "A niche paid tool for accountants",
+        "choose": "What it does, a real demo, price, then questions",
+        "avoid": "Features, logos and a form with no price",
+        "reason": "They decide on fit and cost"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    },
+    {
+      "id": "media-weight",
+      "title": "Media and page weight",
+      "keywords": "image performance lazy loading font video speed",
+      "status": "proposed",
+      "when": "Pages carry large images, video or several fonts.",
+      "avoid_when": "A text-only page.",
+      "inputs": [
+        "Media inventory",
+        "Above-the-fold content",
+        "Target networks"
+      ],
+      "steps": [
+        "Serve responsive, modern formats with declared dimensions",
+        "Lazy load only below the first view",
+        "Load only the fonts and weights in use",
+        "Question each third-party script"
+      ],
+      "checks": [
+        "Layout does not jump on load",
+        "Text is visible while fonts load",
+        "First view works on a slow connection"
+      ],
+      "worked_example": {
+        "input": "A hero video on a marketing page",
+        "choose": "A compressed poster first, then a video only when worthwhile",
+        "avoid": "Autoplaying a full-size file",
+        "reason": "Most of the first impression is load time"
+      },
+      "mechanism_sources": [
+        "nextlevelbuilder/ui-ux-pro-max-skill"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+# OS and language caches
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+node_modules/
+
+# Local credentials and machine state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Generated tasks, captures, reports and distribution archives
+/design-task/
+/distilled-skills/
+/output/
+/research/
+/validation/
+/examples/
+/dist/
+*.log
+
+# Private task/review evidence and repository exports
+/assets/readme/cover-review/
+/private/
+/backups/
+*.bundle
+*.tar.gz
+*.zip

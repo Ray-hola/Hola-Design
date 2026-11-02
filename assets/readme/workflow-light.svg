@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="250" viewBox="0 0 1200 250" role="img" aria-labelledby="title desc">
+  <title id="title">Hola-Design workflow</title>
+  <desc id="desc">Reference to reasoning to skill to new work. Testing new work feeds back into the reasoning.</desc>
+  <rect width="1200" height="250" fill="#f4f6f0"/>
+  <g fill="#23392d" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="600">
+    <text x="40" y="91">Reference</text><text x="345" y="91">Reasoning</text><text x="674" y="91">Skill</text><text x="934" y="91">New work</text>
+  </g>
+  <g fill="none" stroke="#829587" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M292 75H321m-11-10 11 10-11 10M612 75h38m-11-10 11 10-11 10M804 75h96m-11-10 11 10-11 10"/>
+    <path d="M1055 119v72H468v-72m-10 11 10-11 10 11"/>
+  </g>
+  <rect x="592" y="159" width="340" height="63" fill="#f4f6f0"/>
+  <text x="620" y="203" fill="#526b58" font-family="Arial, Helvetica, sans-serif" font-size="42">Test &amp; refine</text>
+  <path d="M40 117h97" stroke="#a5bf58" stroke-width="5"/>
+</svg>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "PPT Design Distill"
+  short_description: "Learn slide patterns and narrative from presentation references"
+  default_prompt: "Use $ppt-design-distill to distill these references into a reusable design skill."

@@ -1,0 +1,24 @@
+{
+  "scene": "web",
+  "template_status": "example-to-replace",
+  "audience": "",
+  "goal": "",
+  "real_content": [],
+  "source_materials": [],
+  "source_rule_ids": [],
+  "supported_scope": "",
+  "success_checks": [],
+  "explicit_exceptions": [],
+  "visitor_intent": "",
+  "next_action": "",
+  "required_widths": [],
+  "real_assets": [],
+  "reference_questions": {
+    "theme": null,
+    "audience": null,
+    "function": null,
+    "purpose": null,
+    "use_context": null
+  },
+  "reference_questions_note": "Interpret the source with evidence status; keep this separate from the current task goal."
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Distill"
+  short_description: "Route reference learning to PPT, UI or web workflows"
+  default_prompt: "Use $design-distill to distill these references into a reusable design skill."

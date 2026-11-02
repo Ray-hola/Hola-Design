@@ -1,0 +1,18 @@
+Hola-Design
+Copyright 2026 Ray-hola
+
+Licensed under the Apache License, Version 2.0. See LICENSE.
+
+The license covers Hola-Design's original material. It does not relicense the
+third-party material below, which keeps its own terms:
+
+- Ten web extraction scripts from Nathan Onn's agent-skills, MIT License:
+  skills/web-design-distill/scripts/, with LICENSE, NOTICE and UPSTREAM.json in that skill.
+- UI UX Pro Max catalog, MIT License, bundled unchanged except one documented label:
+  vendor/ui-ux-pro-max/ in the UI and web skills, with its LICENSE and UPSTREAM.json.
+- Woodcut from Wellcome Collection, marked Public Domain Mark by that institution:
+  assets/readme/cover-source/, with its record in SOURCE.md.
+
+Impeccable (Apache-2.0, Copyright 2025 Paul Bakaus) informed lessons rewritten in our own words; its code and data
+are not included. Fonts are referenced, not distributed.
+Each skill's NOTICE records what was and was not taken from its method references.

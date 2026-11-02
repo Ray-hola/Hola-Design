@@ -1,0 +1,11 @@
+{
+  "claim": "local",
+  "summary": "",
+  "subjects": [],
+  "contexts": [],
+  "viewport_widths": {},
+  "dimensions": {
+    "design": []
+  },
+  "note": "Declare the actual deliverable/scope before review. Expand contexts when changes introduce new layout/state conditions. Rendered work adds design/integrity plan items; see references/loop-exit.md."
+}
