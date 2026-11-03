@@ -1,0 +1,13 @@
+{
+  "design_cases": [],
+  "experiments": [],
+  "questions": [
+    "What is this departure trying to express?",
+    "Which convention changes; which relationships remain or reorganize?",
+    "What might an intuitive/random change of position, direction, glyph, scale or rhythm reveal? Save a baseline and try it.",
+    "What do actual baseline/candidate outputs show with real content and sizes?",
+    "Why keep, revert or revise; at what cost?",
+    "What unexpected value appeared; should the next hypothesis change?",
+    "What candidate design concept emerged and how could it be tested next?"
+  ]
+}

@@ -264,7 +264,7 @@ def exit_gate(journal, result, profile_verified=False, artifact_root=None):
 
 
 def checklist():
-    return json.loads((Path(__file__).resolve().parents[1] / "references/loop-checklist.json").read_text())
+    return json.loads((Path(__file__).resolve().parents[1] / "references/loop/loop-checklist.json").read_text())
 
 
 def initial(profile, spec):

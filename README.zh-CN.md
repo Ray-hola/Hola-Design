@@ -71,7 +71,7 @@ cd Hola-Design
 - **保留有价值的例外。** 有意义的独特设计也能形成知识；应结合其意图比较，而不是自动把它改回惯常形式。
 - **带着条件迁移。** 保留机制及其边界。适合浏览作品集的模式，可能妨碍高频使用的工作台。
 
-每个场景都包含[设计推理指南](skills/ui-design-distill/references/design-reasoning.md)、[蒸馏方法](skills/ui-design-distill/references/distill-method.md)和[字体与创意研究方法](skills/ui-design-distill/references/type-and-creative.md)。
+每个场景都包含[设计推理指南](skills/ui-design-distill/references/method/design-reasoning.md)、[蒸馏方法](skills/ui-design-distill/references/method/distill-method.md)和[字体与创意研究方法](skills/ui-design-distill/references/method/type-and-creative.md)。
 
 ## 三层 LOOP
 
@@ -85,11 +85,11 @@ cd Hola-Design
 
 准出还要通过完整性检查:内容、背景、线条、叠压与导出文件,都要在最终版本和每个展示尺寸上成立。穿字、叠压和裁切只要记录了意图和实际效果就可以通过;只写一句“这是有意设计”不能通过。
 
-详见 [LOOP 协议](skills/ui-design-distill/references/loop-protocol.md)、[审阅覆盖约定](skills/ui-design-distill/references/review-closure.md)和[准出条件](skills/ui-design-distill/references/loop-exit.md)。
+详见 [LOOP 协议](skills/ui-design-distill/references/loop/loop-protocol.md)、[审阅覆盖约定](skills/ui-design-distill/references/loop/review-closure.md)和[准出条件](skills/ui-design-distill/references/loop/loop-exit.md)。
 
 ## 工具与环境
 
-核心工具使用 **Python 3.9+ 及标准库**。旧版网页提取链还需要 **Node.js 18+**，以及[网页工作流](skills/web-design-distill/references/web-workflow.md)中说明的浏览器适配环境。
+核心工具使用 **Python 3.9+ 及标准库**。旧版网页提取链还需要 **Node.js 18+**，以及[网页工作流](skills/web-design-distill/references/scene/web-workflow.md)中说明的浏览器适配环境。
 
 在仓库根目录执行：
 
@@ -138,6 +138,8 @@ Hola-Design/
 ├── CONTRIBUTING.md
 ├── docs/PUBLICATION_REVIEW.md   # 发布范围与权利审查
 ├── scripts/check_repository.py # 发布前检查
+├── scripts/sync_shared.py      # 将 shared/ 同步到各场景 skill
+├── shared/                     # 各场景共用文件的唯一来源
 ├── tests/                      # 完整性闸门与分支同步测试
 ├── assets/readme/              # 封面源稿、最终图片与工作流图
 └── skills/
@@ -157,7 +159,7 @@ Hola-Design/
 
 UI 与 Web 分支内置 Next Level Builder 的 [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) 代码和数据，采用 MIT 许可，固定版本存放在 `vendor/ui-ux-pro-max/`，不受本仓库 Apache-2.0 许可覆盖。各 vendor 目录保留许可证、文件哈希和唯一一处本地修改的记录：[UI 来源记录](skills/ui-design-distill/vendor/ui-ux-pro-max/UPSTREAM.json) · [Web 来源记录](skills/web-design-distill/vendor/ui-ux-pro-max/UPSTREAM.json)。
 
-来自 [Impeccable](https://github.com/pbakaus/impeccable)(Apache-2.0)的方法经验已用我们自己的语言总结,附来源位置以及我们选择不采用的部分:[UI](skills/ui-design-distill/references/impeccable-lessons.md) · [Web](skills/web-design-distill/references/impeccable-lessons.md) · [PPT](skills/ppt-design-distill/references/impeccable-lessons.md)。
+来自 [Impeccable](https://github.com/pbakaus/impeccable)(Apache-2.0)的方法经验已用我们自己的语言总结,附来源位置以及我们选择不采用的部分:[UI](skills/ui-design-distill/references/lessons/impeccable-lessons.md) · [Web](skills/web-design-distill/references/lessons/impeccable-lessons.md) · [PPT](skills/ppt-design-distill/references/lessons/impeccable-lessons.md)。
 
 封面使用了[惠康收藏馆](https://wellcomecollection.org/works/zzxxubww)的一幅木刻,馆方标注为公有领域标记:[来源记录](assets/readme/cover-source/SOURCE.md)。
 
@@ -165,4 +167,4 @@ UI 与 Web 分支内置 Next Level Builder 的 [UI UX Pro Max](https://github.co
 
 ## 维护
 
-修改入口位于 `skills/`；共享 LOOP 工具或协议变动时，同步检查三个场景。Skill 内部保持英文，公开使用说明变动时同步两份 README。第三方文件有改动时更新来源清单并保留适用许可证。任务日志、浏览截图、参考书和私人源文件留在仓库之外。贡献步骤见 [CONTRIBUTING.md](CONTRIBUTING.md)，本次脱敏与权利审查范围见 [发布审查记录](docs/PUBLICATION_REVIEW.md)。可复现且不含敏感信息的问题可提交到 [Issues](https://github.com/Ray-hola/Hola-Design/issues)。
+修改入口位于 `skills/`；各场景共用的文件在 `shared/` 中修改，再运行 `python3 scripts/sync_shared.py` 同步。Skill 内部保持英文，公开使用说明变动时同步两份 README。第三方文件有改动时更新来源清单并保留适用许可证。任务日志、浏览截图、参考书和私人源文件留在仓库之外。贡献步骤见 [CONTRIBUTING.md](CONTRIBUTING.md)，本次脱敏与权利审查范围见 [发布审查记录](docs/PUBLICATION_REVIEW.md)。可复现且不含敏感信息的问题可提交到 [Issues](https://github.com/Ray-hola/Hola-Design/issues)。

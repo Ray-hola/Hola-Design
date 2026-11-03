@@ -17,7 +17,7 @@ def read(path):
 
 
 def search(query, profile=None, limit=5):
-    spec = read(ROOT / "references/recipes.json")
+    spec = read(ROOT / "references/toolkit/recipes.json")
     words = set(re.findall(r"[\w]+", query.casefold()))
     if not words:
         raise ValueError("Provide a nonempty search query")
@@ -63,7 +63,7 @@ def starter(destination):
 
 
 def catalog(query, domain=None, stack=None, recommend=False, limit=3):
-    scene = read(ROOT / "references/recipes.json")["scene"]
+    scene = read(ROOT / "references/toolkit/recipes.json")["scene"]
     if scene == "ppt":
         raise ValueError("This PPT kit has no UI/web catalog; use its presentation recipes and reference evidence")
     vendor = ROOT / "vendor/ui-ux-pro-max"

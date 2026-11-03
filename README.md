@@ -73,7 +73,7 @@ Route by the future task, not the file extension: a browser-based editor is prod
 - **Exceptions worth keeping.** A meaningful one-off departure can teach something a repeated token cannot. Compare it against the design's intention rather than normalizing it automatically.
 - **Conditional transfer.** Preserve mechanisms and their limits. A pattern that works in a portfolio may obstruct a frequently used workbench.
 
-The [reasoning guide](skills/ui-design-distill/references/design-reasoning.md), [distillation method](skills/ui-design-distill/references/distill-method.md), and [typography and creative studies](skills/ui-design-distill/references/type-and-creative.md) are included in each scene skill.
+The [reasoning guide](skills/ui-design-distill/references/method/design-reasoning.md), [distillation method](skills/ui-design-distill/references/method/distill-method.md), and [typography and creative studies](skills/ui-design-distill/references/method/type-and-creative.md) are included in each scene skill.
 
 ## The three loops
 
@@ -87,11 +87,11 @@ Exit requires positive reasons to retain the result, inspection of its weakest s
 
 Exit also needs an integrity check: content, background, lines, overlaps and the export must all hold on the final version, at every display size. Crossing text, overlap, and cropping can pass when their intent and observed effect are recorded; a label of "intentional" cannot.
 
-See the [LOOP protocol](skills/ui-design-distill/references/loop-protocol.md), [review coverage contract](skills/ui-design-distill/references/review-closure.md), and [exit criteria](skills/ui-design-distill/references/loop-exit.md).
+See the [LOOP protocol](skills/ui-design-distill/references/loop/loop-protocol.md), [review coverage contract](skills/ui-design-distill/references/loop/review-closure.md), and [exit criteria](skills/ui-design-distill/references/loop/loop-exit.md).
 
 ## Tools and requirements
 
-Core helpers use **Python 3.9+ and the standard library**. The legacy web extraction pipeline additionally requires **Node.js 18+** and the browser adapters described in the [web workflow](skills/web-design-distill/references/web-workflow.md).
+Core helpers use **Python 3.9+ and the standard library**. The legacy web extraction pipeline additionally requires **Node.js 18+** and the browser adapters described in the [web workflow](skills/web-design-distill/references/scene/web-workflow.md).
 
 From the repository root:
 
@@ -142,6 +142,8 @@ Hola-Design/
 ├── CONTRIBUTING.md
 ├── docs/PUBLICATION_REVIEW.md   # Publication scope and rights review
 ├── scripts/check_repository.py # Publication checks
+├── scripts/sync_shared.py      # Copy shared/ into each scene skill
+├── shared/                     # Single source for files all scenes carry
 ├── tests/                      # Integrity gate and branch sync tests
 ├── assets/readme/              # Cover source, final image and workflow artwork
 └── skills/
@@ -161,7 +163,7 @@ Two third-party sets are bundled as-is because the skills run on them; the rest 
 
 The UI and web branches bundle the code and data of [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) by Next Level Builder, MIT License, at a pinned commit in `vendor/ui-ux-pro-max/`. It is not covered by this repository's Apache-2.0 license. Each vendor folder keeps its license, file hashes and the one documented local change: [UI provenance](skills/ui-design-distill/vendor/ui-ux-pro-max/UPSTREAM.json) · [Web provenance](skills/web-design-distill/vendor/ui-ux-pro-max/UPSTREAM.json).
 
-Method lessons from [Impeccable](https://github.com/pbakaus/impeccable) (Apache-2.0) are summarized in our own words, with source locators and what we chose not to adopt: [UI](skills/ui-design-distill/references/impeccable-lessons.md) · [Web](skills/web-design-distill/references/impeccable-lessons.md) · [Presentations](skills/ppt-design-distill/references/impeccable-lessons.md).
+Method lessons from [Impeccable](https://github.com/pbakaus/impeccable) (Apache-2.0) are summarized in our own words, with source locators and what we chose not to adopt: [UI](skills/ui-design-distill/references/lessons/impeccable-lessons.md) · [Web](skills/web-design-distill/references/lessons/impeccable-lessons.md) · [Presentations](skills/ppt-design-distill/references/lessons/impeccable-lessons.md).
 
 The cover uses a woodcut from [Wellcome Collection](https://wellcomecollection.org/works/zzxxubww), marked Public Domain Mark: [source record](assets/readme/cover-source/SOURCE.md).
 
@@ -170,4 +172,4 @@ Other method references are recorded in each skill's `NOTICE`. Hola-Design's ori
 
 ## Maintenance
 
-Change a scene under `skills/`; update all three copies when changing a shared LOOP helper or protocol. Keep skill content in English and update both READMEs when the public instructions change. Record third-party file changes in their provenance manifest and retain the applicable license. Task journals, browser screenshots, reference books and private source files stay outside this repository. Report reproducible, non-sensitive problems through [Issues](https://github.com/Ray-hola/Hola-Design/issues).
+Change a scene under `skills/`; edit files shared by all scenes in `shared/` and run `python3 scripts/sync_shared.py`. Keep skill content in English and update both READMEs when the public instructions change. Record third-party file changes in their provenance manifest and retain the applicable license. Task journals, browser screenshots, reference books and private source files stay outside this repository. Report reproducible, non-sensitive problems through [Issues](https://github.com/Ray-hola/Hola-Design/issues).

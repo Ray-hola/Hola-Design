@@ -8,8 +8,12 @@ the problem, the resulting behavior and the evidence behind the change.
 
 - `skills/design-distill/` routes a brief; it does not implement the scene skills.
 - `skills/{ppt,ui,web}-design-distill/` hold each scene's independent workflow.
-- Shared LOOP helpers and references are copied into each scene so installed and
-  generated skills remain portable. Update the applicable copies together.
+- `shared/` is the single source for files every scene carries: method, record
+  and LOOP references, starter files and common scripts. Edit them there, then run
+  `python3 scripts/sync_shared.py`; the scene copies keep installed and generated
+  skills portable. Tests fail when a copy drifts.
+- Inside a scene, `references/` is grouped by role: `method/`, `records/`,
+  `scene/`, `loop/`, `toolkit/` and `lessons/`. Packaging copies all but `scene/`.
 - `assets/readme/` holds the final cover, its editable source, licensed source
   image and workflow artwork. Keep temporary studies and browser captures local.
 
@@ -23,6 +27,7 @@ Python 3.9+ is sufficient for the core checks; no Python packages are required:
 
 ```sh
 python3 scripts/check_repository.py
+python3 scripts/sync_shared.py --check
 python3 -m unittest discover -s tests
 ```
 

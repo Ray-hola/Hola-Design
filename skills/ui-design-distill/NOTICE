@@ -1,6 +1,6 @@
 Original material in this skill: Copyright 2026 Ray-hola. Licensed under the Apache License, Version 2.0; see LICENSE-APACHE. Third-party material named below keeps its own terms.
 
-references/principles.json holds review questions written for this project in its own words. They contain no quotations, chapter list or page references from any book.
+references/method/principles.json holds review questions written for this project in its own words. They contain no quotations, chapter list or page references from any book.
 
 Original local workflow, capture expression and domain validator. Method references: Interface Design (task context), Impeccable (surface/state workflow), Maxritter (component contracts), mblode/ibelick (effective source evidence), Leon taste (separate app mode), Emil (contextual motion). No code or datasets from those method-reference projects were copied into the local workflow.
 
@@ -8,6 +8,6 @@ UI UX Pro Max runtime/data vendored from nextlevelbuilder/ui-ux-pro-max-skill, c
 
 Local English-only normalization: data/styles.csv removes the translated parenthetical from the Bauhaus label. All other upstream bytes remain unchanged; UPSTREAM.json preserves the original hash and records the local hash and modification.
 
-references/recipes.json also has cards listing that project as a mechanism source; those are rewritten in our own words.
+references/toolkit/recipes.json also has cards listing that project as a mechanism source; those are rewritten in our own words.
 
-Impeccable method lessons: references/impeccable-lessons.md is an original summary in our own words of methods observed in pbakaus/impeccable, commit e89e3ada3e875a89ac2c5d33d11e65ebef6fe285, Apache-2.0, Copyright 2025 Paul Bakaus and contributors. No code, data or assets from that project are included.
+Impeccable method lessons: references/lessons/impeccable-lessons.md is an original summary in our own words of methods observed in pbakaus/impeccable, commit e89e3ada3e875a89ac2c5d33d11e65ebef6fe285, Apache-2.0, Copyright 2025 Paul Bakaus and contributors. No code, data or assets from that project are included.

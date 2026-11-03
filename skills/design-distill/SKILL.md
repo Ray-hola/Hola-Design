@@ -36,7 +36,7 @@ For examples and mixed-source cases read [routing.md](references/routing.md).
 
 For a cross-disciplinary book, keep source-reading coverage separate from
 application and design acceptance; route by the future task rather than by the
-book's file format. Each branch includes `references/design-principles.md` and
+book's file format. Each branch includes `references/method/design-principles.md` and
 `scripts/principles.py`: review questions in our own words, not mandatory rules or
 observed evidence of a new reference.
 
@@ -49,6 +49,6 @@ diagnosis. Mixed tasks keep separate domain checks and share the task's repair
 budget. A generated skill carries its own review protocol and helper. A draft
 package is usable for testing; packaging alone never establishes transfer quality.
 
-Each branch also carries `references/loop-exit.md`: use its scoped LOOP_EXIT
+Each branch also carries `references/loop/loop-exit.md`: use its scoped LOOP_EXIT
 signal before completion, including its integrity gate for rendered work. A
 checklist, package or partial repair alone cannot establish acceptance.

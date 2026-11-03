@@ -7,7 +7,7 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 
 def catalog():
-    return json.loads((ROOT/'references/principles.json').read_text(encoding='utf-8'))
+    return json.loads((ROOT/'references/method/principles.json').read_text(encoding='utf-8'))
 
 def select(items, query='', scene=None, adoption=None, ids=None):
     terms = re.findall(r'[^\s,]+', query.casefold().replace(chr(0xFF0C), ','))

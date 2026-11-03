@@ -298,7 +298,7 @@ def package(profile, source, review, output_root, name, description_file, journa
     with tempfile.TemporaryDirectory(prefix=".distill-", dir=root) as temporary:
         stage = Path(temporary)
         (stage / "references").mkdir()
-        workflow = (Path(__file__).resolve().parents[1] / "references/consumer-workflow.md").read_text(encoding="utf-8")
+        workflow = (Path(__file__).resolve().parents[1] / "assets/consumer-workflow.md").read_text(encoding="utf-8")
         (stage / "SKILL.md").write_text(f"---\nname: {name}\ndescription: {json.dumps(description, ensure_ascii=False)}\n---\n\n" + workflow, encoding="utf-8")
         (stage / "references/profile.json").write_text(json.dumps(profile, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         (stage / "references/coverage.json").write_text(json.dumps(review, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -319,18 +319,13 @@ def package(profile, source, review, output_root, name, description_file, journa
         (stage / "scripts").mkdir()
         shutil.copy2(skill_root / "scripts/loop_tools.py", stage / "scripts/loop_tools.py")
         shutil.copy2(skill_root / "scripts/review_coverage.py", stage / "scripts/review_coverage.py")
-        for filename in ["loop-protocol.md", "loop-checklist.json"]:
-            shutil.copy2(skill_root / "references" / filename, stage / "references" / filename)
-        for filename in ["toolkit.md", "recipes.json", "distill-method.md", "design-reasoning.md", "analysis-contract.md", "type-and-creative.md", "review-closure.md", "loop-exit.md", "impeccable-lessons.md"]:
-            shutil.copy2(skill_root / "references" / filename, stage / "references" / filename)
-        if (skill_root / "references/presentation-corpus-lessons.md").is_file():
-            shutil.copy2(skill_root / "references/presentation-corpus-lessons.md", stage / "references/presentation-corpus-lessons.md")
+        # Method, record contracts, review protocol, toolkit and lessons keep their folders; scene/ is extraction-only.
+        for folder in ["method", "records", "loop", "toolkit", "lessons"]:
+            shutil.copytree(skill_root / "references" / folder, stage / "references" / folder)
         shutil.copy2(skill_root / "scripts/kit.py", stage / "scripts/kit.py")
         shutil.copy2(skill_root / "scripts/capture_artifact.py", stage / "scripts/capture_artifact.py")
         shutil.copy2(skill_root / "scripts/collect_font.py", stage / "scripts/collect_font.py")
         shutil.copy2(skill_root / "scripts/principles.py", stage / "scripts/principles.py")
-        for filename in ["design-principles.md", "principles.json"]:
-            shutil.copy2(skill_root / "references" / filename, stage / "references" / filename)
         shutil.copytree(skill_root / "assets/starter", stage / "assets/starter")
         for filename in ["LICENSE-APACHE", "LICENSE", "NOTICE"]:
             if (skill_root / filename).is_file():

@@ -14,7 +14,7 @@ Learn what each page helps a visitor understand or do, and how visual rules and
 sections support that goal. Preserve source evidence without replacing the
 brand with a generic palette, fashionable layout or universal anti-pattern list.
 For exact-vs-estimated values and visual-role distinctions read
-[visual-evidence.md](references/visual-evidence.md) when needed.
+[visual-evidence.md](references/method/visual-evidence.md) when needed.
 
 Resolve `SKILL_ROOT` to the absolute folder containing this file. Profile tools
 need Python 3.9+; the extraction scripts need Node ≥18 and page/CDP tools.
@@ -26,8 +26,8 @@ for every distillation, whatever its destination: a profile or package, a change
 to this or another skill's references, recipes or method notes, a report or notes.
 
 1. Before parsing, capturing or rendering any source, read
-   [loop-protocol.md](references/loop-protocol.md) and
-   [loop-exit.md](references/loop-exit.md). Create the working profile, then the
+   [loop-protocol.md](references/loop/loop-protocol.md) and
+   [loop-exit.md](references/loop/loop-exit.md). Create the working profile, then the
    journal with `scripts/loop_tools.py init`.
 2. Record every source-derived statement in the profile first, with evidence IDs
    and status. This includes recipe cards, method notes and summaries. Write any
@@ -52,14 +52,14 @@ skip a loop. Record that as a scope change and report the unrun loops as unfinis
 
 ## Distillation method
 
-Before interpreting a reference, read [distill-method.md](references/distill-method.md):
+Before interpreting a reference, read [distill-method.md](references/method/distill-method.md):
 product theme/audience/function/purpose/context → domain structure → visual roles
 and relationships → conditional rules → new-content validation. Record reference
 intent separately from the new brief. Inspect size relationships, color roles,
 spacing rhythm, frame versus text alignment and relevant media/information/motion.
 Use exact, relative, ranged, categorical or qualitative expressions as evidence
 allows; do not invent precision. A repeated value is a candidate, not a universal rule.
-See [analysis-contract.md](references/analysis-contract.md) for evidence-graded
+See [analysis-contract.md](references/records/analysis-contract.md) for evidence-graded
 `intent` and optional visual relationship fields. Narrow style-only requests can
 remain partial; record unknowns instead of filling all dimensions.
 
@@ -68,12 +68,12 @@ remain partial; record unknowns instead of filling all dimensions.
 Use known audience, visitor intent and future page requirements. Sample relevant
 same-origin pages, including the supplied one; state the selection and proceed.
 Separate a public product site from the working app it depicts. Read
-[web-workflow.md](references/web-workflow.md) for source-code and screenshot paths.
+[web-workflow.md](references/scene/web-workflow.md) for source-code and screenshot paths.
 
 ## 2. Gather visual and structural evidence
 
 For a live site with Playwright page/CDP tools, use the bundled
-[extraction pipeline](references/extraction-pipeline.md) for measured tokens,
+[extraction pipeline](references/scene/extraction-pipeline.md) for measured tokens,
 component anatomy, states, sections and source fixtures. It supplies engineering
 evidence, not the whole page's communication logic.
 
@@ -84,18 +84,18 @@ On unavailable browsing, inspect supplied sources and report coverage limits.
 
 ## 3. Turn instances into usable patterns
 
-Read [patterns.md](references/patterns.md). For each section, record its purpose,
+Read [patterns.md](references/scene/patterns.md). For each section, record its purpose,
 content/assets it requires, when to choose it, structure, variable parts and
 observed mobile changes. Record the page's ordering logic and supported design
 trade-offs. Avoid making one page's composition a rule for the whole brand.
 
 For interaction or award-reference study, read
-[design-reasoning.md](references/design-reasoning.md). Explain how reading,
+[design-reasoning.md](references/method/design-reasoning.md). Explain how reading,
 attention and action relationships support the visitor's intention before choosing
 sections or effects. Inspect a meaningful later section and actual action result;
 a changed URL, loader or award recognition alone does not establish a useful path.
 
-Read [evidence.md](references/evidence.md) and [profile.md](references/profile.md)
+Read [evidence.md](references/records/evidence.md) and [profile.md](references/records/profile.md)
 to write a web-specific profile. Do not fill absent charts, motion or sections.
 Inferred rationale stays separate from observed measurements.
 
@@ -112,16 +112,31 @@ describe a token-only or local-component package as a complete website design sk
 
 ## 5. Test unseen content
 
-Read [evaluation.md](references/evaluation.md). Build a source-absent page using
+Read [evaluation.md](references/scene/evaluation.md). Build a source-absent page using
 new content, evaluate pattern choice and information hierarchy, render at the
 sizes it should support, and repair the strongest failures. Report source
 fidelity, communication, browser quality and transfer separately. Conversion
 uplift requires behavioral evidence and is not inferred from appearance.
 
-## Three-loop review and release
+## Typeface study and creative departures
 
-Keep [loop-protocol.md](references/loop-protocol.md) open from the LOOP gate onward.
-Use [loop-checklist.json](references/loop-checklist.json) for this scene's checks.
+Read [type-and-creative.md](references/method/type-and-creative.md) for source typography,
+art lettering, specimen collection and creative comparison. Record typefaces and
+valuable unique design_cases even without repetition. Interpret departures through
+intent and visual relationships; do not penalize novelty for failing a familiar
+pattern. When designing, explore promising alternative type/composition choices
+and compare actual outputs. New review journals use adaptive exploration, with
+explicit user limits honored. Two unchanged attempts prompt a new direction,
+not a global stop. Keep font verification and inferred design concepts distinct.
+
+For an expressive surface, inspect `assets/starter/spatial-study.html` as one
+spatial typography candidate: direction, anchors, scale, layering and reading path
+are design variables. Choose by task and theme; no direction is a universal preset.
+
+## Review, closure and exit
+
+Keep [loop-protocol.md](references/loop/loop-protocol.md) open from the LOOP gate onward.
+Use [loop-checklist.json](references/loop/loop-checklist.json) for this scene's checks.
 Run the distillation loop before packaging, the design loop on actual output, and
 feedback on a new task using the generated skill. Attribute failures before
 changing the tool, product skill, output or supported scope. Apply the shared
@@ -135,6 +150,39 @@ python3 "$SKILL_ROOT/scripts/profile_tools.py" package profile.json --review rev
   --name example-reviewed-reference --out ./distilled-skills
 ```
 
+Before claiming a result has been reviewed, read
+[review-closure.md](references/loop/review-closure.md). Declare subjects and actual
+contexts, check whole/detail/relations, and bind observations to final artifact
+hashes. After changes recheck affected neighbours and contexts. Captured is not
+inspected, and local review is not whole-deliverable review. Run
+`scripts/loop_tools.py finish review.json --profile profile.json --artifact-root
+./design-task`; report its scope and remaining gaps if it does not close. Creative
+departures remain hypotheses to compare, not automatic failures.
+
+For expressive design work, actively try promising random or intuitive residuals,
+even on a passing candidate. Preserve a baseline, inspect actual alternatives and
+choose by intent and whole composition; unexpected gains may open a new direction.
+Use existing experiments and the residual exploration section of
+[type-and-creative.md](references/method/type-and-creative.md). No perturbation quota or
+required gain; keep rigorous coverage for the retained delivery without automatically
+normalizing departures from convention.
+
+Before declaring completion, use [loop-exit.md](references/loop/loop-exit.md). Record
+positive quality reasons, inspect the weakest subject and resolve the strongest
+objection. Close its integrity gate on rendered work: ground, objects, every display
+context and the export, with crossings and crops tested by their observed effect. Only a current `finish` result with `loop_exit.state=PASS` permits a
+scoped completion claim. HOLD, UNVERIFIED, BLOCKED and INTERRUPTED are unfinished
+states; coverage alone does not establish quality.
+
+On a new quality objection, follow loop-exit.md and run `reopen` on every
+affected review journal before repair. Do not bulk-fill passed judgments or
+substitute intent explanations/unrelated comparisons for the actual question.
+
+Draft packages are testable before the outer loop. Call a package reviewed only
+for its recorded scope when all three loops are accepted. Author-run tests do not
+establish independent transfer. Report outstanding failures and source coverage
+alongside review state; never use a package's existence as proof of design quality.
+
 ## Sharing a distilled package
 
 Packaging copies the profile, evidence values, selected artifacts and any supplied
@@ -145,24 +193,32 @@ for the intended audience; retain applicable licenses and attribution. Keep
 restricted captures local and transfer the design reasoning in your own words.
 A design LOOP PASS is not a privacy or copyright clearance.
 
-Draft packages are testable before the outer loop. Call a package reviewed only
-for its recorded scope when all three loops are accepted. Author-run tests do not
-establish independent transfer. Report outstanding failures and source coverage
-alongside review state; never use a package's existence as proof of design quality.
+## Resources
 
-## Practical resources
+| Folder | Holds | Read when |
+|---|---|---|
+| `references/method/` | Distillation method, design reasoning, visual evidence, typography and creative study, review questions | Interpreting a reference or choosing an expression |
+| `references/records/` | Evidence semantics, incremental analysis fields, this scene's profile contract | Writing or validating a profile |
+| `references/scene/` | Extraction pipeline and web workflow, section patterns, evaluation | Collecting evidence and testing transfer |
+| `references/loop/` | LOOP protocol, review closure, exit gate, this scene's checklist | From the LOOP gate until completion |
+| `references/toolkit/` | Toolkit guide and conditional recipe cards | Starting a task or seeking an implementation approach |
+| `references/lessons/` | Method lessons with source locators and limits | Scoping ambition, reviewing a render or closing repairs |
+| `assets/` | Starter task kit and the generated-skill workflow template | Running `kit.py init` or packaging |
+
+Generated skills carry `method/`, `records/`, `loop/`, `toolkit/` and `lessons/`;
+`scene/` stays with this extraction skill.
 
 For questions about entry, reading order, type, optical balance, negative space
-or expressive departures, read [design-principles.md](references/design-principles.md).
+or expressive departures, read [design-principles.md](references/method/design-principles.md).
 Use `scripts/principles.py` to find a question or create an unanswered worksheet.
 These questions supply hypotheses, not observed brand rules, mandatory Z layouts,
 equal widths, or rounded containers.
 
-Read [toolkit.md](references/toolkit.md) when starting a new task or looking for a
+Read [toolkit.md](references/toolkit/toolkit.md) when starting a new task or looking for a
 concrete implementation approach. Use `scripts/kit.py init --out ./design-task`
 for the scene's editable brief, evidence worksheet, scoped-decision plan, stress
 content and runnable neutral preview. Search the conditional
-[recipe cards](references/recipes.json) with `scripts/kit.py search "keywords"
+[recipe cards](references/toolkit/recipes.json) with `scripts/kit.py search "keywords"
 --profile profile.json`; learned records and generic proposals stay separate.
 Do not adopt a template's demo content or neutral values as source facts.
 
@@ -175,54 +231,7 @@ brief constraints; recommendations do not alter a profile. Use
 a portable generated skill. The upstream MIT license and file provenance remain
 inside `vendor/ui-ux-pro-max/`.
 
-## Typeface study and creative departures
-
-Read [type-and-creative.md](references/type-and-creative.md) for source typography,
-art lettering, specimen collection and creative comparison. Record typefaces and
-valuable unique design_cases even without repetition. Interpret departures through
-intent and visual relationships; do not penalize novelty for failing a familiar
-pattern. When designing, explore promising alternative type/composition choices
-and compare actual outputs. New review journals use adaptive exploration, with
-explicit user limits honored. Two unchanged attempts prompt a new direction,
-not a global stop. Keep font verification and inferred design concepts distinct.
-
-For an expressive surface, inspect `assets/starter/spatial-study.html` as one
-spatial typography candidate: direction, anchors, scale, layering and reading path
-are design variables. Choose by task and theme; no direction is a universal preset.
-
-## Required review closure
-
-Before claiming a result has been reviewed, read
-[review-closure.md](references/review-closure.md). Declare subjects and actual
-contexts, check whole/detail/relations, and bind observations to final artifact
-hashes. After changes recheck affected neighbours and contexts. Captured is not
-inspected, and local review is not whole-deliverable review. Run
-`scripts/loop_tools.py finish review.json --profile profile.json --artifact-root
-./design-task`; report its scope and remaining gaps if it does not close. Creative
-departures remain hypotheses to compare, not automatic failures.
-
-For expressive design work, actively try promising random or intuitive residuals,
-even on a passing candidate. Preserve a baseline, inspect actual alternatives and
-choose by intent and whole composition; unexpected gains may open a new direction.
-Use existing experiments and the residual exploration section of
-[type-and-creative.md](references/type-and-creative.md). No perturbation quota or
-required gain; keep rigorous coverage for the retained delivery without automatically
-normalizing departures from convention.
-
-Before declaring completion, use [loop-exit.md](references/loop-exit.md). Record
-positive quality reasons, inspect the weakest subject and resolve the strongest
-objection. Close its integrity gate on rendered work: ground, objects, every display
-context and the export, with crossings and crops tested by their observed effect. Only a current `finish` result with `loop_exit.state=PASS` permits a
-scoped completion claim. HOLD, UNVERIFIED, BLOCKED and INTERRUPTED are unfinished
-states; coverage alone does not establish quality.
-
-On a new quality objection, follow loop-exit.md and run `reopen` on every
-affected review journal before repair. Do not bulk-fill passed judgments or
-substitute intent explanations/unrelated comparisons for the actual question.
-
-## Method lessons from Impeccable
-
 When scoping ambition, reviewing a render or closing repairs, read
-[impeccable-lessons.md](references/impeccable-lessons.md): adopted lessons with source
+[impeccable-lessons.md](references/lessons/impeccable-lessons.md): adopted lessons with source
 locators and limits, plus what was deliberately not adopted. They are method
 candidates, not rules of a learned reference.

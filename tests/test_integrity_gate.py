@@ -346,7 +346,7 @@ class GeneratedSkill(unittest.TestCase):
                 self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
                 skill = root / "out" / ("fixture-" + scene)
                 self.assertIn("integrity", (skill / "SKILL.md").read_text())
-                self.assertIn("Integrity gate", (skill / "references/loop-exit.md").read_text())
+                self.assertIn("Integrity gate", (skill / "references/loop/loop-exit.md").read_text())
                 self.assertTrue((skill / "scripts/capture_artifact.py").is_file())
                 self.assertEqual(sha(skill / "LICENSE-APACHE"), sha(REPO / "LICENSE"))
                 self.assertIn("Ray-hola", (skill / "NOTICE").read_text())
@@ -369,12 +369,10 @@ class GeneratedSkill(unittest.TestCase):
 
 
 class BranchSync(unittest.TestCase):
-    def test_shared_tools_and_protocol_are_identical(self):
-        shared = ["scripts/capture_artifact.py", "scripts/loop_tools.py", "scripts/review_coverage.py", "references/loop-exit.md",
-                  "references/loop-protocol.md", "references/review-closure.md"]
-        for name in shared:
-            with self.subTest(name=name):
-                self.assertEqual(len({sha(REPO / "skills" / (s + "-design-distill") / name) for s in SCENES}), 1)
+    def test_scene_copies_match_shared_source(self):
+        run = subprocess.run([sys.executable, "-B", str(REPO / "scripts/sync_shared.py"), "--check"], capture_output=True, text=True)
+        self.assertEqual(run.returncode, 0, run.stdout)
+        self.assertTrue((REPO / "shared/references/loop/loop-exit.md").is_file())
 
     def test_loop_gate_precedes_extraction(self):
         for scene in SCENES:
@@ -413,7 +411,7 @@ class BranchSync(unittest.TestCase):
 
     def test_every_scene_requires_integrity(self):
         for scene in SCENES:
-            data = json.loads((REPO / "skills" / (scene + "-design-distill") / "references/loop-checklist.json").read_text())
+            data = json.loads((REPO / "skills" / (scene + "-design-distill") / "references/loop/loop-checklist.json").read_text())
             self.assertTrue(any(d["id"] == "integrity" and d["required"] for d in data["design"]), scene)
 
 
