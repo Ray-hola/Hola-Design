@@ -5,14 +5,26 @@ or when interpreting a business presentation reference. These lessons come from
 one private study. They are candidates to test, not rules of a new reference and
 not a house style. Evidence from the current reference and brief takes priority.
 
+## Recovery state: UNVERIFIED
+
+The historical study skipped the formal profile and all three LOOP records.
+[Recovery status](presentation-corpus-status.json) distinguishes inventory and
+recomputed declarations from unverified visual/transfer claims. A new private
+profile and journal now exist; they do not retroactively validate the study.
+Every qualitative lesson below remains **historical, not yet reverified** until
+mapped to fresh page-level evidence. Recipe status `proposed` describes possible
+application, not verified provenance. Do not present these lessons as completed
+learning or promote them to rules of a current reference without inspection.
+
 ## What was studied and how far it reaches
 
 - 34 business presentations: 26 PPTX and 8 PDF, about 1,200 rendered pages. They
   cover promotion reviews, strategy reviews, organization and market research,
   investor and executive talks, customer exchanges, teaching and template kits.
-- PPTX files were parsed for titles, geometry, declared styles, charts, tables,
-  notes and transitions, then rendered. All pages were viewed on contact sheets;
-  a few were enlarged. Contact sheets show structure, not small-text legibility.
+- Saved PPTX parses cover titles, geometry, declared styles, charts, tables,
+  notes and transitions. The historical author reported viewing contact sheets
+  and enlarging a few pages; this recovery does not verify that coverage.
+  Contact sheets show structure, not small-text legibility.
 - The sources are private and are not distributed. This file keeps relationships
   in our own words, without their content, names, figures, logos or page images.
 - The collector labeled these decks high quality. No audience or business outcome
@@ -24,8 +36,9 @@ not a house style. Evidence from the current reference and brief takes priority.
 
 ## 1. Let the reading situation set density
 
-Density followed how a deck is consumed more than its topic. Counts are each deck's
-median characters per slide outside tables, so table-heavy decks read denser than
+Density followed how a deck is consumed more than its topic. Counts use each deck's
+upper-middle sorted character count per slide outside tables (for an even number
+of slides, this is not the average of the two middle values), so table-heavy decks read denser than
 shown; one research deck that was mostly tables measured about 20 and is left out.
 
 | Situation | Text outside tables | Job of a page | Typical proof |
@@ -43,14 +56,14 @@ which suggests a label does not change density unless the pages are rewritten.
 
 ## 2. Choose a title system on purpose
 
-Outside the template kits, parsed PPTX titles had per-deck medians of about 13-43
+Outside the template kits, parsed PPTX titles had per-deck upper-middle lengths of about 13-43
 characters; titles not in placeholders were missed. Forms observed:
 
 | Form | Use when | Limit |
 |---|---|---|
 | Full-sentence claim | The reader should get the argument from titles alone | Two lines at most in the samples; longer titles crowd the content |
-| `Label | claim` | A long review needs both location and argument | The label must stay a stable vocabulary, or it adds noise |
-| `Track - segment | claim` | Research spans a hierarchy of topics | Depth costs title width |
+| `Label &#124; claim` | A long review needs both location and argument | The label must stay a stable vocabulary, or it adds noise |
+| `Track - segment &#124; claim` | Research spans a hierarchy of topics | Depth costs title width |
 | Short topic | The presenter supplies the claim, or the page is a catalog entry | Self-read users lose the argument |
 | Statement page | A spoken turn deserves the whole screen | Loses force if most pages use it |
 
@@ -112,9 +125,10 @@ Recurring page patterns, each with its condition and cost:
 
 ## 6. Make evidence checkable in proportion to the claim
 
-- Source footers varied by genre: most pages of a benchmark report, about half in
-  market research and roadshows, almost none in reviews or live talks. Count was
-  measured by pattern and may miss sources placed elsewhere.
+- Historical notes suggest different source-footer conventions by genre. The
+  saved script counts matching text shapes, not distinct pages, so its output
+  cannot establish source-page percentages. Recount distinct pages and inspect
+  source placement before making a prevalence claim.
 - A research deck stated that its figures were external and partly inferred. A
   one-line scope note protects both the claim and the speaker.
 - Effective charts sorted categories, placed the takeaway on the chart, and used

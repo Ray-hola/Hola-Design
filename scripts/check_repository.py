@@ -3,13 +3,16 @@
 import ast
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
+import subprocess
 import sys
 from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 SKIP = {".git", "__pycache__", ".pytest_cache", ".venv", "node_modules"}
+LOCAL_ONLY = {"private", "temp"}
 RULES = {
     "private key": r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----",
     "GitHub credential": r"\b(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,})\b",
@@ -19,15 +22,34 @@ RULES = {
 }
 
 
+def publication_files(root):
+    """Prune local storage before walking; a separate index check rejects tracked data."""
+    for directory, folders, files in os.walk(root, followlinks=False):
+        base = Path(directory)
+        excluded = SKIP | (LOCAL_ONLY if base == root else set())
+        for name in sorted(folders):
+            candidate = base / name
+            if name not in excluded and candidate.is_symlink():
+                yield candidate
+        folders[:] = sorted(name for name in folders if name not in excluded and not (base / name).is_symlink())
+        for name in sorted(files):
+            yield base / name
+
+
 def check():
     errors, count, manifests = [], 0, 0
-    for path in sorted(ROOT.rglob("*")):
+    tracked = subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, capture_output=True, check=True).stdout
+    for name in tracked.decode().split("\0"):
+        if name and Path(name).parts[0] in LOCAL_ONLY:
+            errors.append(f"{name}: local-only content is tracked; remove it from the publication index")
+    for path in publication_files(ROOT):
         relative = path.relative_to(ROOT)
-        if any(part in SKIP for part in relative.parts) or not path.is_file():
-            continue
-        count += 1
         if path.is_symlink():
             errors.append(f"{relative}: review symlinks before publication")
+            continue
+        if not path.is_file():
+            continue
+        count += 1
         if path.name.startswith(".env") and path.name != ".env.example":
             errors.append(f"{relative}: environment file is not distributable")
         if path.suffix.lower() in {".pem", ".key", ".epub", ".pdf", ".ttf", ".otf", ".woff", ".woff2"}:
@@ -45,7 +67,7 @@ def check():
             # Upstream catalogs contain explicit fictitious bad-path examples.
             if "vendor" not in relative.parts and re.search(r"/(?:Users|home)/[A-Za-z0-9_.-]+/", line):
                 errors.append(f"{relative}:{number}: machine-specific home path")
-        if relative.parts[0] == "skills" and re.search(r"[\u3400-\u9fff]", text):
+        if relative.parts[0] in {"skills", "shared"} and re.search(r"[\u3400-\u9fff]", text):
             errors.append(f"{relative}: skill content must be English")
         if path.suffix == ".py":
             try:

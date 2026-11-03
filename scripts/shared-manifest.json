@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "files": {
+    "LICENSE-APACHE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "assets/starter/creative-study.json": "273f28b91d393de9566de293229ae8fa862af37e4de74ff8d20f6b9dcd6d89ca",
+    "assets/starter/design-plan.md": "9fd4baa93225c5fee2eef3ae670c93e893863941eb10d519eff208605facafae",
+    "assets/starter/distillation.csv": "df5e30019c19881617e1d41b01dfe603a20ee01d86701031e2f3f69916b754e9",
+    "assets/starter/evidence-plan.csv": "cc674a5f1f4052586eec77e847d41e0b2a8100e6c96fd1d58d07b73c19186ea0",
+    "assets/starter/review-scope.json": "783a286c83231af8340d7b3b14a7316265092650c858954672789a8c862e455c",
+    "assets/starter/type-study.json": "d9660779ee5ea7a2a63ebdeb64b2e9cddfd9139e25d9e08adcaabc85e58882a9",
+    "references/loop/execution.md": "ab7e4ba6498072a66d9f83bc43f49f7281ac16ec14e7e15c76cc5482949d94ae",
+    "references/loop/loop-exit.md": "3ebee34820b6922d687cd290342ff4845d4e9bca347086be77cf337c43440d50",
+    "references/loop/loop-protocol.md": "e945f5432de9a3c22170ba38a36e4bbd771e80f56984a512a5ee17ecc1535f34",
+    "references/loop/review-closure.md": "1dca0cecbcf07d751f90638ea434fe803acce9879e3044950e9df855a36b1aca",
+    "references/method/design-principles.md": "8f585734ce956776923830b4c4f886a04891740d811a1c0d01d5567920b41bb0",
+    "references/method/design-reasoning.md": "1b1f1a52a9f14694a36ddbcc964276e7d5729119683403338ee311c530081385",
+    "references/method/distill-method.md": "e1155f75316e48848d97915b18170c4db93f6689a37197d97a1aa1622dfe256e",
+    "references/method/principles.json": "e39815bd38f9208ae0cc65bcc6195b974035d166817421329a4e86ebfcb39fc5",
+    "references/method/type-and-creative.md": "8f92082d2d6375219cf70ff1969d956eceb73015f9017eeee2c05412ec42c90e",
+    "references/method/visual-evidence.md": "03707d9d60f7af2bd3071ab243e38b4a6359aae390216abf2fb718918d63b05c",
+    "references/records/analysis-contract.md": "1640323e46944de5c79cd6fdd564b27292b2ad65e14952e2c6754dd54ee95b71",
+    "references/records/evidence.md": "a6f66236d45c54fe9c2e3bc4b9555b9da39cf23d34467b2c6b20f12d99288665",
+    "scripts/capture_artifact.py": "d3ae2ab7e085f0a40498ae16785649a1a80265384154a570f3debd533195b5bb",
+    "scripts/collect_font.py": "e0d75ce8a4aed3a438a3f76905adf537ce4f81650079570f02fd16250b10045c",
+    "scripts/kit.py": "a58b0833d7e24252d12affee60d1ca754b60c4f9f69dbbf9812f1a307cc0f7f2",
+    "scripts/loop_tools.py": "218dcbb08ad87efd0ec15e33e49493c8790db65407f4f93d0f3568bb7f6dc9bd",
+    "scripts/principles.py": "89d71c102e4b4db91bb7c433d8981d2f2eb40ad345dd47b04b94aff5680058b6",
+    "scripts/profile_tools.py": "ff51cd2e5c42ad55419d3ec7e5159c1fdf6b8cca4a5f60da02662b79c261e841",
+    "scripts/review_coverage.py": "f95784f113d6e0c7bace0c04cb791685f8167f89b002f69308fa72c391b0f5bb"
+  }
+}

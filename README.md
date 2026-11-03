@@ -89,6 +89,16 @@ Exit also needs an integrity check: content, background, lines, overlaps and the
 
 See the [LOOP protocol](skills/ui-design-distill/references/loop/loop-protocol.md), [review coverage contract](skills/ui-design-distill/references/loop/review-closure.md), and [exit criteria](skills/ui-design-distill/references/loop/loop-exit.md).
 
+Each scene starts with a compact task contract and an
+[execution map](skills/ui-design-distill/references/loop/execution.md): distill
+references, apply a learned skill, repair a result, or maintain the skill itself.
+The map specifies evidence, transitions and unfinished states; scene references
+load when needed. Creative choices remain open within the brief.
+
+The [presentation corpus status](skills/ppt-design-distill/references/lessons/presentation-corpus-status.json)
+marks historical learning that skipped LOOP as **UNVERIFIED**. Recomputed source
+statistics and preserved materials do not establish design or transfer acceptance.
+
 ## Tools and requirements
 
 Core helpers use **Python 3.9+ and the standard library**. The legacy web extraction pipeline additionally requires **Node.js 18+** and the browser adapters described in the [web workflow](skills/web-design-distill/references/scene/web-workflow.md).
@@ -172,4 +182,4 @@ Other method references are recorded in each skill's `NOTICE`. Hola-Design's ori
 
 ## Maintenance
 
-Change a scene under `skills/`; edit files shared by all scenes in `shared/` and run `python3 scripts/sync_shared.py`. Keep skill content in English and update both READMEs when the public instructions change. Record third-party file changes in their provenance manifest and retain the applicable license. Task journals, browser screenshots, reference books and private source files stay outside this repository. Report reproducible, non-sensitive problems through [Issues](https://github.com/Ray-hola/Hola-Design/issues).
+Change a scene under `skills/`; edit files shared by all scenes in `shared/` and run `python3 scripts/sync_shared.py`. Keep skill content in English and update both READMEs when the public instructions change. Record third-party file changes in their provenance manifest and retain the applicable license. Keep private repositories, task journals and source materials in local `private/`; put disposable working files in `temp/`. Both are excluded from Git. `python3 scripts/clean_temp.py` previews cleanup; `--apply` removes unprotected temporary items unchanged for 14 days. Use `.keep` inside an active task folder to retain it. Private storage is never auto-cleaned. The local daily automation is not installed by cloning this repository. Report reproducible, non-sensitive problems through [Issues](https://github.com/Ray-hola/Hola-Design/issues).

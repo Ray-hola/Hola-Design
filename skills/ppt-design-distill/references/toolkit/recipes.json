@@ -228,7 +228,13 @@
       },
       "mechanism_sources": [
         "private presentation corpus; see references/lessons/presentation-corpus-lessons.md"
-      ]
+      ],
+      "provenance": {
+        "corpus_id": "business-presentations-34",
+        "review_state": "UNVERIFIED",
+        "status_record": "references/lessons/presentation-corpus-status.json",
+        "meaning": "Historical source-derived candidate; proposed application does not validate its evidence or transfer."
+      }
     },
     {
       "id": "title-system",
@@ -258,7 +264,13 @@
       },
       "mechanism_sources": [
         "private presentation corpus; see references/lessons/presentation-corpus-lessons.md"
-      ]
+      ],
+      "provenance": {
+        "corpus_id": "business-presentations-34",
+        "review_state": "UNVERIFIED",
+        "status_record": "references/lessons/presentation-corpus-status.json",
+        "meaning": "Historical source-derived candidate; proposed application does not validate its evidence or transfer."
+      }
     },
     {
       "id": "agenda-recap",
@@ -288,7 +300,13 @@
       },
       "mechanism_sources": [
         "private presentation corpus; see references/lessons/presentation-corpus-lessons.md"
-      ]
+      ],
+      "provenance": {
+        "corpus_id": "business-presentations-34",
+        "review_state": "UNVERIFIED",
+        "status_record": "references/lessons/presentation-corpus-status.json",
+        "meaning": "Historical source-derived candidate; proposed application does not validate its evidence or transfer."
+      }
     },
     {
       "id": "statement-proof",
@@ -318,7 +336,13 @@
       },
       "mechanism_sources": [
         "private presentation corpus; see references/lessons/presentation-corpus-lessons.md"
-      ]
+      ],
+      "provenance": {
+        "corpus_id": "business-presentations-34",
+        "review_state": "UNVERIFIED",
+        "status_record": "references/lessons/presentation-corpus-status.json",
+        "meaning": "Historical source-derived candidate; proposed application does not validate its evidence or transfer."
+      }
     },
     {
       "id": "peer-scaffold",
@@ -348,7 +372,13 @@
       },
       "mechanism_sources": [
         "private presentation corpus; see references/lessons/presentation-corpus-lessons.md"
-      ]
+      ],
+      "provenance": {
+        "corpus_id": "business-presentations-34",
+        "review_state": "UNVERIFIED",
+        "status_record": "references/lessons/presentation-corpus-status.json",
+        "meaning": "Historical source-derived candidate; proposed application does not validate its evidence or transfer."
+      }
     },
     {
       "id": "case-triad",
@@ -380,7 +410,13 @@
       },
       "mechanism_sources": [
         "private presentation corpus; see references/lessons/presentation-corpus-lessons.md"
-      ]
+      ],
+      "provenance": {
+        "corpus_id": "business-presentations-34",
+        "review_state": "UNVERIFIED",
+        "status_record": "references/lessons/presentation-corpus-status.json",
+        "meaning": "Historical source-derived candidate; proposed application does not validate its evidence or transfer."
+      }
     },
     {
       "id": "layered-stack",
@@ -410,7 +446,13 @@
       },
       "mechanism_sources": [
         "private presentation corpus; see references/lessons/presentation-corpus-lessons.md"
-      ]
+      ],
+      "provenance": {
+        "corpus_id": "business-presentations-34",
+        "review_state": "UNVERIFIED",
+        "status_record": "references/lessons/presentation-corpus-status.json",
+        "meaning": "Historical source-derived candidate; proposed application does not validate its evidence or transfer."
+      }
     },
     {
       "id": "annotated-trend",
@@ -441,7 +483,13 @@
       },
       "mechanism_sources": [
         "private presentation corpus; see references/lessons/presentation-corpus-lessons.md"
-      ]
+      ],
+      "provenance": {
+        "corpus_id": "business-presentations-34",
+        "review_state": "UNVERIFIED",
+        "status_record": "references/lessons/presentation-corpus-status.json",
+        "meaning": "Historical source-derived candidate; proposed application does not validate its evidence or transfer."
+      }
     }
   ]
 }

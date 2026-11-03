@@ -4,6 +4,6 @@ references/method/principles.json holds review questions written for this projec
 
 Original local workflow and parser. Method references: arcsin1/style-generate-skill (structural evidence before style); anthropics/skills pptx (content fit and rendering QA); Senlin taste (evidence-linked decisions). No code from these projects copied into this branch.
 
-Presentation corpus lessons: references/lessons/presentation-corpus-lessons.md and the recipe cards citing it are original summaries in our own words of relationships observed in private business presentations. No source text, figures, names, logos, page images or template files are included, and no rights in those sources are granted.
+Presentation corpus lessons: references/lessons/presentation-corpus-lessons.md and the recipe cards citing it are original summaries in our own words of historical interpretations of private business presentations; their unverified learning status is recorded in references/lessons/presentation-corpus-status.json. No source text, figures, names, logos, page images or template files are included, and no rights in those sources are granted.
 
 Impeccable method lessons: references/lessons/impeccable-lessons.md is an original summary in our own words of methods observed in pbakaus/impeccable, commit e89e3ada3e875a89ac2c5d33d11e65ebef6fe285, Apache-2.0, Copyright 2025 Paul Bakaus and contributors. No code, data or assets from that project are included.

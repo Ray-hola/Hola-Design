@@ -1,0 +1,106 @@
+{
+  "corpus_id": "business-presentations-34",
+  "review_state": "UNVERIFIED",
+  "historical_loop": "not_run",
+  "recovery": "new private profile and journal initialized; no retrospective acceptance",
+  "inventory": {
+    "pptx": 26,
+    "pdf": 8,
+    "rendered_page_files": 1212,
+    "contact_sheets": 61
+  },
+  "verified_scope": [
+    "Original inventory and saved source hashes checked",
+    "Private backup copies verified",
+    "Three historical statistics scripts rerun; declarations only"
+  ],
+  "limitations": [
+    "No new page-level visual verification in this recovery",
+    "Historical notes are inconsistent and do not constitute a journal",
+    "Fonts substituted; hidden slides omitted; animation not played",
+    "No design or new-task feedback acceptance",
+    "Upper-middle text statistic excludes tables; source-footer counts are shape matches, not page coverage"
+  ],
+  "claims": [
+    {
+      "id": "corpus-lesson-01",
+      "section": "reading situation and density",
+      "source_review": "unverified",
+      "design_review": "not_run",
+      "feedback_review": "not_run",
+      "page_evidence_ids": []
+    },
+    {
+      "id": "corpus-lesson-02",
+      "section": "title system",
+      "source_review": "unverified",
+      "design_review": "not_run",
+      "feedback_review": "not_run",
+      "page_evidence_ids": []
+    },
+    {
+      "id": "corpus-lesson-03",
+      "section": "cross-page orientation",
+      "source_review": "unverified",
+      "design_review": "not_run",
+      "feedback_review": "not_run",
+      "page_evidence_ids": []
+    },
+    {
+      "id": "corpus-lesson-04",
+      "section": "comparable scaffolds",
+      "source_review": "unverified",
+      "design_review": "not_run",
+      "feedback_review": "not_run",
+      "page_evidence_ids": []
+    },
+    {
+      "id": "corpus-lesson-05",
+      "section": "emphasis roles",
+      "source_review": "unverified",
+      "design_review": "not_run",
+      "feedback_review": "not_run",
+      "page_evidence_ids": []
+    },
+    {
+      "id": "corpus-lesson-06",
+      "section": "evidence presentation",
+      "source_review": "unverified",
+      "design_review": "not_run",
+      "feedback_review": "not_run",
+      "page_evidence_ids": []
+    },
+    {
+      "id": "corpus-lesson-07",
+      "section": "modular decks",
+      "source_review": "unverified",
+      "design_review": "not_run",
+      "feedback_review": "not_run",
+      "page_evidence_ids": []
+    },
+    {
+      "id": "corpus-lesson-08",
+      "section": "deliberate departures",
+      "source_review": "unverified",
+      "design_review": "not_run",
+      "feedback_review": "not_run",
+      "page_evidence_ids": []
+    },
+    {
+      "id": "corpus-lesson-09",
+      "section": "failure signs",
+      "source_review": "unverified",
+      "design_review": "not_run",
+      "feedback_review": "not_run",
+      "page_evidence_ids": []
+    },
+    {
+      "id": "corpus-lesson-10",
+      "section": "application questions",
+      "source_review": "unverified",
+      "design_review": "not_run",
+      "feedback_review": "not_run",
+      "page_evidence_ids": []
+    }
+  ]
+}

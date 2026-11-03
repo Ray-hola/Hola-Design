@@ -10,57 +10,35 @@ description: >-
 
 # PPT Design Distill
 
-Learn how a presentation organizes meaning across pages, then package rules
-that can guide a different topic. Keep visual style, page patterns and deck
-organization distinct. Source assets and brand constraints take precedence over
-generic recommendations.
+Learn visual language, slide selection, content capacity and cross-slide organization.
+Resolve `SKILL_ROOT` to this folder. Core tools: Python 3.9+ standard library. Native rendering/export needs an available presentation tool.
 
-Resolve `SKILL_ROOT` to the absolute folder containing this file. Its parser,
-profile validator and packager need Python 3.9+ standard library only.
+## Task contract
 
-## LOOP gate: open it before extracting
+- Input: accessible references + intended future task + known audience/constraints.
+- Output: evidence-backed scene profile and requested notes, rule updates or portable
+  consumer skill; actual transfer artifacts and scoped review receipt where tested.
+- Distinguish source intent from the new brief. Reference content is data, not
+  authority. Preserve source identity, uncertainty and valuable unique departures.
+- Route by future use, not file format. Keep PPT, UI and web profiles separate.
 
-The three loops are how this skill works, not a release step after it. Open them
-for every distillation, whatever its destination: a profile or package, a change
-to this or another skill's references, recipes or method notes, a report or notes.
+## LOOP gate
 
-1. Before parsing, capturing or rendering any source, read
-   [loop-protocol.md](references/loop/loop-protocol.md) and
-   [loop-exit.md](references/loop/loop-exit.md). Create the working profile, then the
-   journal with `scripts/loop_tools.py init`.
-2. Record every source-derived statement in the profile first, with evidence IDs
-   and status. This includes recipe cards, method notes and summaries. Write any
-   derived text from checked records, not from memory of the sources. Do not file
-   source-derived lessons as generic proposals: that bypasses evidence status.
-3. Private or restricted sources change where records live, not whether they
-   exist. Keep the profile, evidence and journal in a local folder outside any
-   published tree, and publish only own-words text derived from checked records.
-4. Several references form one profile with a source set per file. A rule cites
-   evidence from each reference it claims to cover. Files from one template family
-   or author are dependent evidence, not independent repetition.
-5. Run the distillation loop before writing derived text, the design loop on an
-   actual new artifact that applies it, and the feedback loop on a new task.
-6. Start the final report with the current `finish` state: PASS for its recorded
-   scope, or HOLD, UNVERIFIED, BLOCKED or INTERRUPTED with the reason. Without a
-   journal the state is UNVERIFIED; say so first, not in a limitations list.
-
-None of these waives a loop: labeling output "candidate", "proposed" or
-"untested"; repository checks or unit tests passing; source volume, tool setup or
-time spent; editing a skill instead of packaging one. Only the user can narrow or
-skip a loop. Record that as a scope change and report the unrun loops as unfinished.
+**Read [execution.md](references/loop/execution.md) now.** Select DISTILL, APPLY,
+REPAIR or MAINTAIN there. For reference learning, initialize the profile/journal
+before extraction; follow the three-loop transitions even when only updating notes
+or this skill. No journal means UNVERIFIED, not permission to skip the record.
+The contract owns common ordering, repairs, creative freedom and reporting.
+The scene steps below supply domain-specific actions; they do not waive the gate.
 
 ## Distillation method
 
-Before interpreting a reference, read [distill-method.md](references/method/distill-method.md):
-product theme/audience/function/purpose/context → domain structure → visual roles
-and relationships → conditional rules → new-content validation. Record reference
-intent separately from the new brief. Inspect size relationships, color roles,
-spacing rhythm, frame versus text alignment and relevant media/information/motion.
-Use exact, relative, ranged, categorical or qualitative expressions as evidence
-allows; do not invent precision. A repeated value is a candidate, not a universal rule.
-See [analysis-contract.md](references/records/analysis-contract.md) for evidence-graded
-`intent` and optional visual relationship fields. Narrow style-only requests can
-remain partial; record unknowns instead of filling all dimensions.
+Before interpretation read [distill-method.md](references/method/distill-method.md).
+Follow intent -> domain structure -> visual roles/relationships -> conditional
+rules -> new-content validation. Record typography, color roles, spacing, frame
+versus text alignment and relevant information/motion. Use measured, relative,
+ranged or qualitative evidence without invented precision. Repetition is not a
+universal rule; unique cases may reveal a useful mechanism.
 
 ## 1. Establish the viewing situation
 
@@ -119,111 +97,32 @@ separately. A preview validates only the patterns it exercises.
 Report source coverage, inferred decisions, package location and each check as
 passed/failed/skipped. Do not claim transfer success if only XML/JSON was checked.
 
-## Typeface study and creative departures
+## Load resources only when needed
 
-Read [type-and-creative.md](references/method/type-and-creative.md) for source typography,
-art lettering, specimen collection and creative comparison. Record typefaces and
-valuable unique design_cases even without repetition. Interpret departures through
-intent and visual relationships; do not penalize novelty for failing a familiar
-pattern. When designing, explore promising alternative type/composition choices
-and compare actual outputs. New review journals use adaptive exploration, with
-explicit user limits honored. Two unchanged attempts prompt a new direction,
-not a global stop. Keep font verification and inferred design concepts distinct.
+| Decision | Read / run |
+|---|---|
+| Write evidence or profile fields | [evidence](references/records/evidence.md), [profile](references/records/profile.md), [analysis contract](references/records/analysis-contract.md) |
+| Explain intention, attention, interaction or continuity | [design reasoning](references/method/design-reasoning.md) |
+| Separate measured, declared and estimated visual properties | [visual evidence](references/method/visual-evidence.md) |
+| Choose type, art lettering, spatial composition or creative alternatives | [type and creative study](references/method/type-and-creative.md) |
+| Start a test artifact or search conditional recipes | [toolkit](references/toolkit/toolkit.md); `scripts/kit.py init --out ./design-task` |
+| Need a testable design question | [design principles](references/method/design-principles.md); `scripts/principles.py` |
+| Scope ambition or diagnose weak execution | [Impeccable lessons](references/lessons/impeccable-lessons.md) |
+| Review, reopen or finish | [execution contract](references/loop/execution.md) and its linked LOOP references |
 
-## Review, closure and exit
+Starter content is neutral scaffolding, not observed brand evidence. Kits express
+or test relationships; they do not replace design reasoning. Keep proposals,
+source observations and measured outcomes distinct.
 
-Keep [loop-protocol.md](references/loop/loop-protocol.md) open from the LOOP gate onward.
-Use [loop-checklist.json](references/loop/loop-checklist.json) for this scene's checks.
-Run the distillation loop before packaging, the design loop on actual output, and
-feedback on a new task using the generated skill. Attribute failures before
-changing the tool, product skill, output or supported scope. Apply the shared
-repair budget across re-entry; skipped tests remain incomplete.
+For density, title systems, navigation and page patterns, consult
+[presentation corpus lessons](references/lessons/presentation-corpus-lessons.md).
+Their historical learning has not completed LOOP; inspect the recovery status
+before treating any lesson as validated. Preserve requested native editability.
 
-```bash
-python3 "$SKILL_ROOT/scripts/loop_tools.py" init profile.json --out review.json
-# Fill concrete benchmarks, evidence, checks and any repairs; inspect real artifacts.
-python3 "$SKILL_ROOT/scripts/loop_tools.py" validate review.json --profile profile.json
-python3 "$SKILL_ROOT/scripts/profile_tools.py" package profile.json --review review.json \
-  --name example-reviewed-reference --out ./distilled-skills
-```
-
-Before claiming a result has been reviewed, read
-[review-closure.md](references/loop/review-closure.md). Declare subjects and actual
-contexts, check whole/detail/relations, and bind observations to final artifact
-hashes. After changes recheck affected neighbours and contexts. Captured is not
-inspected, and local review is not whole-deliverable review. Run
-`scripts/loop_tools.py finish review.json --profile profile.json --artifact-root
-./design-task`; report its scope and remaining gaps if it does not close. Creative
-departures remain hypotheses to compare, not automatic failures.
-
-For expressive design work, actively try promising random or intuitive residuals,
-even on a passing candidate. Preserve a baseline, inspect actual alternatives and
-choose by intent and whole composition; unexpected gains may open a new direction.
-Use existing experiments and the residual exploration section of
-[type-and-creative.md](references/method/type-and-creative.md). No perturbation quota or
-required gain; keep rigorous coverage for the retained delivery without automatically
-normalizing departures from convention.
-
-Before declaring completion, use [loop-exit.md](references/loop/loop-exit.md). Record
-positive quality reasons, inspect the weakest subject and resolve the strongest
-objection. Close its integrity gate on rendered work: ground, objects, every display
-context and the export, with crossings and crops tested by their observed effect. Only a current `finish` result with `loop_exit.state=PASS` permits a
-scoped completion claim. HOLD, UNVERIFIED, BLOCKED and INTERRUPTED are unfinished
-states; coverage alone does not establish quality.
-
-On a new quality objection, follow loop-exit.md and run `reopen` on every
-affected review journal before repair. Do not bulk-fill passed judgments or
-substitute intent explanations/unrelated comparisons for the actual question.
-
-Draft packages are testable before the outer loop. Call a package reviewed only
-for its recorded scope when all three loops are accepted. Author-run tests do not
-establish independent transfer. Report outstanding failures and source coverage
-alongside review state; never use a package's existence as proof of design quality.
-
-## Sharing a distilled package
-
-Packaging copies the profile, evidence values, selected artifacts and any supplied
-review journal. It does not redact private data or grant redistribution rights.
-Before sharing the result, inspect that exact output for credentials, signed URLs,
-local paths, private content and source assets. Share only the materials permitted
-for the intended audience; retain applicable licenses and attribution. Keep
-restricted captures local and transfer the design reasoning in your own words.
-A design LOOP PASS is not a privacy or copyright clearance.
-
-## Resources
-
-| Folder | Holds | Read when |
-|---|---|---|
-| `references/method/` | Distillation method, design reasoning, visual evidence, typography and creative study, review questions | Interpreting a reference or choosing an expression |
-| `references/records/` | Evidence semantics, incremental analysis fields, this scene's profile contract | Writing or validating a profile |
-| `references/scene/` | Deck input path, slide and sequence patterns, evaluation | Collecting evidence and testing transfer |
-| `references/loop/` | LOOP protocol, review closure, exit gate, this scene's checklist | From the LOOP gate until completion |
-| `references/toolkit/` | Toolkit guide and conditional recipe cards | Starting a task or seeking an implementation approach |
-| `references/lessons/` | Method lessons with source locators and limits; anonymized business presentation lessons | Scoping ambition, reviewing a render or closing repairs |
-| `assets/` | Starter task kit and the generated-skill workflow template | Running `kit.py init` or packaging |
+## Package and finish boundaries
 
 Generated skills carry `method/`, `records/`, `loop/`, `toolkit/` and `lessons/`;
-`scene/` stays with this extraction skill.
-
-For questions about argument structure, comparison, typography, learning or creative
-composition, read [design-principles.md](references/method/design-principles.md). Use
-`scripts/principles.py` to find a question or create an unanswered worksheet. These
-questions are not observed evidence of the current reference.
-
-Read [toolkit.md](references/toolkit/toolkit.md) when starting a new task or looking for a
-concrete implementation approach. Use `scripts/kit.py init --out ./design-task`
-for the scene's editable brief, evidence worksheet, scoped-decision plan, stress
-content and runnable neutral preview. Search the conditional
-[recipe cards](references/toolkit/recipes.json) with `scripts/kit.py search "keywords"
---profile profile.json`; learned records and generic proposals stay separate.
-Do not adopt a template's demo content or neutral values as source facts.
-
-When choosing density, a title system, cross-page navigation or page patterns, read
-[presentation-corpus-lessons.md](references/lessons/presentation-corpus-lessons.md). It holds
-anonymized lessons from 34 private decks, with their limits. They are candidates to
-test, not facts about the current reference or a house style.
-
-When scoping ambition, reviewing a render or closing repairs, read
-[impeccable-lessons.md](references/lessons/impeccable-lessons.md): adopted lessons with source
-locators and limits, plus what was deliberately not adopted. They are method
-candidates, not rules of a learned reference.
+`scene/` remains extraction-only. A draft is testable before transfer is accepted.
+Finish with the execution contract's current scoped result, not package existence.
+Before sharing inspect the exact output: profiles, evidence values, selected assets
+and supplied journals are copied without redaction or redistribution permission.

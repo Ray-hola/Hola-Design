@@ -5,6 +5,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+import re
 import struct
 import subprocess
 import sys
@@ -345,6 +346,25 @@ class GeneratedSkill(unittest.TestCase):
                                       "--name", "fixture-" + scene, "--out", str(root / "out")], capture_output=True, text=True)
                 self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
                 skill = root / "out" / ("fixture-" + scene)
+                # Check the installed artifact, not only the source-tree links.
+                for document in skill.rglob("*.md"):
+                    content = document.read_text()
+                    links = re.findall(r"\]\(([^\s)]+)\)", content)
+                    if document.name == "SKILL.md":
+                        links += re.findall(r"`(references/[^`\s]+\.(?:md|json))`", content)
+                    for link in links:
+                        if ":" not in link and not link.startswith("#"):
+                            self.assertTrue((document.parent / link.split("#")[0]).is_file(),
+                                            str(document.relative_to(skill)) + ": " + link)
+                for command in [
+                    ["kit.py", "init", "--out", str(root / "task")],
+                    ["kit.py", "search", "typography"],
+                    ["principles.py", "search", "typography", "--scene", scene],
+                ]:
+                    run = subprocess.run([sys.executable, "-B", str(skill / "scripts" / command[0]), *command[1:]],
+                                         capture_output=True, text=True)
+                    self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+                self.assertTrue((root / "task/preview.html").is_file())
                 self.assertIn("integrity", (skill / "SKILL.md").read_text())
                 self.assertIn("Integrity gate", (skill / "references/loop/loop-exit.md").read_text())
                 self.assertTrue((skill / "scripts/capture_artifact.py").is_file())

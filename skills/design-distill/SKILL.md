@@ -7,48 +7,38 @@ description: >-
   patterns and evaluation. For an already clear scene use its branch directly.
 ---
 
-# Design Distill
+# Design Distill router
 
-Identify what future work the distilled skill should guide. Route by use, not
-file extension: a web dashboard is product UI, a SaaS public site is a website,
-and slides hosted on a site can still be a presentation.
+## Input and output
 
-| Intended future work | Load sibling skill |
+Input: intended future design work and accessible references.
+Output: selected scene skill(s), preserved scope and explicit routing reason.
+This router does not implement extraction or authorize external actions.
+
+## Choose by use, not file extension
+
+| Future task | Load relative to this file |
 |---|---|
-| Present or explain in a sequence of slides | `../ppt-design-distill/SKILL.md` |
-| Complete a product task using objects, controls and states | `../ui-design-distill/SKILL.md` |
-| Read/understand a site or decide and act from its content | `../web-design-distill/SKILL.md` |
+| Explain or present through a slide sequence | `../ppt-design-distill/SKILL.md` |
+| Complete a product task through objects, controls and states | `../ui-design-distill/SKILL.md` |
+| Understand a public site, read content or decide and act from it | `../web-design-distill/SKILL.md` |
 
-Resolve these paths relative to this file. Load only the applicable branch.
-When multiple scenes are requested, produce separate profiles and consumer
-skills; reuse only explicit shared brand evidence. A dashboard pictured in a
-marketing page is not evidence of its working product flow.
+- IF the future task is clear: state the route and load that branch now.
+- IF an unresolved ambiguity changes the branch: ask one focused question; reuse
+  available context rather than asking again.
+- IF mixed: use separate scene profiles and consumer skills. Share only explicit
+  brand evidence, not domain checks. A dashboard image on a marketing page does
+  not prove a working product flow. Keep the user's shared task limits.
+- IF a sibling is absent: report the exact missing branch; do not improvise its
+  implementation. Install the sibling scene folders to use this router.
 
-If the outcome is clear, state the routing and proceed. Ask one focused question
-only if missing context would change the branch or requested scope. Do not ask
-again for information already provided.
+## Handoff
 
-Each branch contains its own scripts and references and works without this
-router. If a sibling is missing, report the exact missing branch; do not claim
-the router itself implements it. Install all four sibling folders to use the router.
+Read the chosen branch's LOOP gate before extracting, including when the output
+is only notes or an update to an existing skill. The branch's execution contract
+separates DISTILL, APPLY, REPAIR and MAINTAIN and owns its evidence/exit requirements.
+A book's reading coverage and a new design's acceptance are separate claims.
+A draft package can support testing but cannot establish transfer quality.
 
-For examples and mixed-source cases read [routing.md](references/routing.md).
-
-For a cross-disciplinary book, keep source-reading coverage separate from
-application and design acceptance; route by the future task rather than by the
-book's file format. Each branch includes `references/method/design-principles.md` and
-`scripts/principles.py`: review questions in our own words, not mandatory rules or
-observed evidence of a new reference.
-
-
-Open the selected branch's LOOP gate before extracting from any source, even
-when the result will only edit a skill or produce notes. The branch owns three
-bounded loops: distillation against source,
-design against brief and learned rules, and new-task feedback with layer-specific
-diagnosis. Mixed tasks keep separate domain checks and share the task's repair
-budget. A generated skill carries its own review protocol and helper. A draft
-package is usable for testing; packaging alone never establishes transfer quality.
-
-Each branch also carries `references/loop/loop-exit.md`: use its scoped LOOP_EXIT
-signal before completion, including its integrity gate for rendered work. A
-checklist, package or partial repair alone cannot establish acceptance.
+For mixed-source examples read [routing.md](references/routing.md).
+Each scene is independently installable and includes its own scripts/references.

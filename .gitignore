@@ -26,6 +26,7 @@ node_modules/
 # Private task/review evidence and repository exports
 /assets/readme/cover-review/
 /private/
+/temp/
 /backups/
 *.bundle
 *.tar.gz

@@ -11,7 +11,11 @@ the problem, the resulting behavior and the evidence behind the change.
 - `shared/` is the single source for files every scene carries: method, record
   and LOOP references, starter files and common scripts. Edit them there, then run
   `python3 scripts/sync_shared.py`; the scene copies keep installed and generated
-  skills portable. Tests fail when a copy drifts.
+  skills portable. Tests fail when a copy drifts. The ownership manifest at
+  `scripts/shared-manifest.json` also tracks removals and renames. Sync deletes
+  only retired copies matching their last synchronized hash; an edited retired
+  copy stops the operation before any writes. Resolve that conflict explicitly,
+  then rerun sync. Do not manually reset the manifest to hide drift.
 - Inside a scene, `references/` is grouped by role: `method/`, `records/`,
   `scene/`, `loop/`, `toolkit/` and `lessons/`. Packaging copies all but `scene/`.
 - `assets/readme/` holds the final cover, its editable source, licensed source
@@ -20,6 +24,38 @@ the problem, the resulting behavior and the evidence behind the change.
 Skill instructions, tools, metadata and supporting documents use English. Update
 both README editions when public usage changes. Artifact copy can use the language
 required by its brief.
+
+## Local storage and commit attribution
+
+- `private/`: local private repositories, source materials, journals, recovery
+  backups and validation receipts. Never publish or automatically clean it.
+- `temp/`: disposable task output. Pin an active or retained task with a `.keep`
+  file inside its top-level task directory. Move evidence needed for later review
+  into `private/` before cleanup eligibility.
+- Both folders are ignored by Git. The publication checker skips their contents
+  but fails if either folder has been forced into the Git index. Gitignore does
+  not clear already published data; inspect history separately before publication.
+- Do not add AI model or assistant `Co-authored-by` trailers to this project's
+  commits. Preserve legitimate human authorship and third-party license notices.
+
+Preview cleanup with `python3 scripts/clean_temp.py`. Use `--apply` to remove only
+items in this repository's `temp/` whose entire contents have been unchanged for
+14 days. `.keep`, nested Git repositories, symlinks and tracked items protect the
+whole task directory. Private files are never candidates. A local Codex automation
+may invoke this daily; cloning the repository does not install a scheduled task.
+
+## Instruction changes
+
+Keep selection and task scope in each `SKILL.md`. Put common execution decisions
+in `shared/references/loop/execution.md`; keep domain knowledge in the scene's
+references. State inputs, action, required evidence, next condition and failure
+route. Use existing status/schema names; decorative syntax is not an executable
+validator. Link details at the decision where they are needed. Keep creative
+choices open and evidence/completion requirements explicit.
+
+Maintenance checks validate files and behavior, not design acceptance. Learning
+new references requires DISTILL records even when the result only updates a skill.
+Preserve unverified historical learning as such; do not backfill an invented PASS.
 
 ## Checks
 

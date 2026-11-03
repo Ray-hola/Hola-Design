@@ -87,6 +87,10 @@ cd Hola-Design
 
 详见 [LOOP 协议](skills/ui-design-distill/references/loop/loop-protocol.md)、[审阅覆盖约定](skills/ui-design-distill/references/loop/review-closure.md)和[准出条件](skills/ui-design-distill/references/loop/loop-exit.md)。
 
+每个场景现在从简短的任务契约和[执行导航](skills/ui-design-distill/references/loop/execution.md)开始，区分蒸馏参考、应用已有 skill、修复产物与维护 skill。导航明确所需证据、推进条件和未完成状态，场景资料按需读取；创意选择仍由任务意图与实际效果决定。
+
+[演示文稿语料状态](skills/ppt-design-distill/references/lessons/presentation-corpus-status.json)明确将历史上跳过 LOOP 的学习标为 **UNVERIFIED**。材料保全与统计复算，不等于设计质量或迁移验证通过。
+
 ## 工具与环境
 
 核心工具使用 **Python 3.9+ 及标准库**。旧版网页提取链还需要 **Node.js 18+**，以及[网页工作流](skills/web-design-distill/references/scene/web-workflow.md)中说明的浏览器适配环境。
@@ -167,4 +171,6 @@ UI 与 Web 分支内置 Next Level Builder 的 [UI UX Pro Max](https://github.co
 
 ## 维护
 
-修改入口位于 `skills/`；各场景共用的文件在 `shared/` 中修改，再运行 `python3 scripts/sync_shared.py` 同步。Skill 内部保持英文，公开使用说明变动时同步两份 README。第三方文件有改动时更新来源清单并保留适用许可证。任务日志、浏览截图、参考书和私人源文件留在仓库之外。贡献步骤见 [CONTRIBUTING.md](CONTRIBUTING.md)，本次脱敏与权利审查范围见 [发布审查记录](docs/PUBLICATION_REVIEW.md)。可复现且不含敏感信息的问题可提交到 [Issues](https://github.com/Ray-hola/Hola-Design/issues)。
+修改入口位于 `skills/`；各场景共用的文件在 `shared/` 中修改，再运行 `python3 scripts/sync_shared.py` 同步。Skill 内部保持英文，公开使用说明变动时同步两份 README。第三方文件有改动时更新来源清单并保留适用许可证。任务日志、浏览截图、参考书和私人源文件保留在本地 `private/`，不进入发布内容。贡献步骤见 [CONTRIBUTING.md](CONTRIBUTING.md)，本次脱敏与权利审查范围见 [发布审查记录](docs/PUBLICATION_REVIEW.md)。可复现且不含敏感信息的问题可提交到 [Issues](https://github.com/Ray-hola/Hola-Design/issues)。
+
+本地使用 `private/` 保存私人仓库、来源材料、审阅日志和恢复备份，使用 `temp/` 保存可丢弃的临时文件；两个目录均排除在 Git 之外。`python3 scripts/clean_temp.py` 只预览，添加 `--apply` 才清理连续 14 天未更新且未受保护的临时项。正在使用或需要保留的任务目录内放置 `.keep`；私人资料不会被自动清理。本机的每日清理任务不会随仓库克隆自动安装。
