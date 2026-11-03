@@ -323,6 +323,8 @@ def package(profile, source, review, output_root, name, description_file, journa
             shutil.copy2(skill_root / "references" / filename, stage / "references" / filename)
         for filename in ["toolkit.md", "recipes.json", "distill-method.md", "design-reasoning.md", "analysis-contract.md", "type-and-creative.md", "review-closure.md", "loop-exit.md", "impeccable-lessons.md"]:
             shutil.copy2(skill_root / "references" / filename, stage / "references" / filename)
+        if (skill_root / "references/presentation-corpus-lessons.md").is_file():
+            shutil.copy2(skill_root / "references/presentation-corpus-lessons.md", stage / "references/presentation-corpus-lessons.md")
         shutil.copy2(skill_root / "scripts/kit.py", stage / "scripts/kit.py")
         shutil.copy2(skill_root / "scripts/capture_artifact.py", stage / "scripts/capture_artifact.py")
         shutil.copy2(skill_root / "scripts/collect_font.py", stage / "scripts/collect_font.py")

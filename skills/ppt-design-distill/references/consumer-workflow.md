@@ -144,6 +144,12 @@ When scoping ambition, reviewing a render or closing repairs, read
 `references/impeccable-lessons.md`. It records source locators, conditions and what
 was not adopted. These are method candidates, not facts about this reference.
 
+## Business presentation lessons
+
+When choosing density, a title system, navigation or page patterns, read
+`references/presentation-corpus-lessons.md`. It records anonymized candidates and
+their limits. This reference's own evidence and the brief take priority.
+
 ## Sharing and source rights
 
 Treat this as a local working package until its actual contents have been reviewed

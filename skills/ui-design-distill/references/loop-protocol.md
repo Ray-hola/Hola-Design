@@ -1,6 +1,7 @@
 # Three-loop protocol · v1.5
 
-Read this before reviewing a distillation or generated design. The scene checklist
+Read this before extracting from any source, and again before reviewing a
+distillation or generated design. The scene checklist
 is `loop-checklist.json`; typeface and creative review is in
 [type-and-creative.md](type-and-creative.md). Common evidence/process records do
 not merge PPT sequences, UI tasks and website composition into one model.

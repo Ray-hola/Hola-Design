@@ -18,6 +18,37 @@ generic recommendations.
 Resolve `SKILL_ROOT` to the absolute folder containing this file. Its parser,
 profile validator and packager need Python 3.9+ standard library only.
 
+## LOOP gate: open it before extracting
+
+The three loops are how this skill works, not a release step after it. Open them
+for every distillation, whatever its destination: a profile or package, a change
+to this or another skill's references, recipes or method notes, a report or notes.
+
+1. Before parsing, capturing or rendering any source, read
+   [loop-protocol.md](references/loop-protocol.md) and
+   [loop-exit.md](references/loop-exit.md). Create the working profile, then the
+   journal with `scripts/loop_tools.py init`.
+2. Record every source-derived statement in the profile first, with evidence IDs
+   and status. This includes recipe cards, method notes and summaries. Write any
+   derived text from checked records, not from memory of the sources. Do not file
+   source-derived lessons as generic proposals: that bypasses evidence status.
+3. Private or restricted sources change where records live, not whether they
+   exist. Keep the profile, evidence and journal in a local folder outside any
+   published tree, and publish only own-words text derived from checked records.
+4. Several references form one profile with a source set per file. A rule cites
+   evidence from each reference it claims to cover. Files from one template family
+   or author are dependent evidence, not independent repetition.
+5. Run the distillation loop before writing derived text, the design loop on an
+   actual new artifact that applies it, and the feedback loop on a new task.
+6. Start the final report with the current `finish` state: PASS for its recorded
+   scope, or HOLD, UNVERIFIED, BLOCKED or INTERRUPTED with the reason. Without a
+   journal the state is UNVERIFIED; say so first, not in a limitations list.
+
+None of these waives a loop: labeling output "candidate", "proposed" or
+"untested"; repository checks or unit tests passing; source volume, tool setup or
+time spent; editing a skill instead of packaging one. Only the user can narrow or
+skip a loop. Record that as a scope change and report the unrun loops as unfinished.
+
 ## Distillation method
 
 Before interpreting a reference, read [distill-method.md](references/distill-method.md):
@@ -90,7 +121,7 @@ passed/failed/skipped. Do not claim transfer success if only XML/JSON was checke
 
 ## Three-loop review and release
 
-Read [loop-protocol.md](references/loop-protocol.md) before reviewing the profile.
+Keep [loop-protocol.md](references/loop-protocol.md) open from the LOOP gate onward.
 Use [loop-checklist.json](references/loop-checklist.json) for this scene's checks.
 Run the distillation loop before packaging, the design loop on actual output, and
 feedback on a new task using the generated skill. Attribute failures before
@@ -130,10 +161,17 @@ questions are not observed evidence of the current reference.
 Read [toolkit.md](references/toolkit.md) when starting a new task or looking for a
 concrete implementation approach. Use `scripts/kit.py init --out ./design-task`
 for the scene's editable brief, evidence worksheet, scoped-decision plan, stress
-content and runnable neutral preview. Search the six conditional
+content and runnable neutral preview. Search the fourteen conditional
 [recipe cards](references/recipes.json) with `scripts/kit.py search "keywords"
 --profile profile.json`; learned records and generic proposals stay separate.
 Do not adopt a template's demo content or neutral values as source facts.
+
+## Lessons from a business presentation corpus
+
+When choosing density, a title system, cross-page navigation or page patterns, read
+[presentation-corpus-lessons.md](references/presentation-corpus-lessons.md). It holds
+anonymized lessons from 34 private decks, with their limits. They are candidates to
+test, not facts about the current reference or a house style.
 
 ## Typeface study and creative departures
 

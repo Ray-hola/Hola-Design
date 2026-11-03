@@ -376,6 +376,14 @@ class BranchSync(unittest.TestCase):
             with self.subTest(name=name):
                 self.assertEqual(len({sha(REPO / "skills" / (s + "-design-distill") / name) for s in SCENES}), 1)
 
+    def test_loop_gate_precedes_extraction(self):
+        for scene in SCENES:
+            with self.subTest(scene=scene):
+                text = (REPO / "skills" / (scene + "-design-distill") / "SKILL.md").read_text()
+                self.assertIn("## LOOP gate", text)
+                self.assertLess(text.index("## LOOP gate"), text.index("## Distillation method"))
+                self.assertLess(text.index("## LOOP gate"), text.index("## 1."))
+
     def test_skills_hold_no_book_index_or_packaging_converter(self):
         banned_paths = ["scripts/convert-design-system.mjs"]
         banned_text = ["pdf_pages"]

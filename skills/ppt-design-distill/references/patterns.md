@@ -21,5 +21,7 @@ can require different information density.
 
 When explaining taste, state the scenario, actual choice, a defensible alternative,
 inferred reason and evidence. Avoid author-motive certainty and fixed quotas.
-A text-only conclusion can be correct; a reference need not adopt a stock motif,
+For conditions and costs of recurring business deck patterns, see
+[presentation-corpus-lessons.md](presentation-corpus-lessons.md); they are candidates,
+not a catalog to fill. A text-only conclusion can be correct; a reference need not adopt a stock motif,
 new palette, decorative asset or animation to be judged complete.

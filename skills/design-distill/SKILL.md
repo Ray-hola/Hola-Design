@@ -41,7 +41,9 @@ book's file format. Each branch includes `references/design-principles.md` and
 observed evidence of a new reference.
 
 
-The selected branch owns three bounded loops: distillation against source,
+Open the selected branch's LOOP gate before extracting from any source, even
+when the result will only edit a skill or produce notes. The branch owns three
+bounded loops: distillation against source,
 design against brief and learned rules, and new-task feedback with layer-specific
 diagnosis. Mixed tasks keep separate domain checks and share the task's repair
 budget. A generated skill carries its own review protocol and helper. A draft
