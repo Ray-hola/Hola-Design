@@ -326,6 +326,22 @@ def package(profile, source, review, output_root, name, description_file, journa
         shutil.copy2(skill_root / "scripts/capture_artifact.py", stage / "scripts/capture_artifact.py")
         shutil.copy2(skill_root / "scripts/collect_font.py", stage / "scripts/collect_font.py")
         shutil.copy2(skill_root / "scripts/principles.py", stage / "scripts/principles.py")
+        shutil.copy2(skill_root / "scripts/motion_tools.py", stage / "scripts/motion_tools.py")
+        shutil.copy2(skill_root / "scripts/motion_runtime.py", stage / "scripts/motion_runtime.py")
+        if (skill_root / "vendor/reanimate").is_dir():
+            vendor = skill_root / "vendor/reanimate"
+            manifest = json.loads((vendor / "UPSTREAM.json").read_text())
+            for item in manifest["files"]:
+                relative = Path(item["path"])
+                source = vendor / relative
+                if (relative.is_absolute() or ".." in relative.parts or
+                    any(p.is_symlink() for p in [source, *source.parents]) or
+                    hashlib.sha256(source.read_bytes()).hexdigest() != item["sha256"]):
+                    raise ValueError("Invalid pinned Reanimate source: " + str(relative))
+                target = stage / "vendor/reanimate" / relative
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(source, target)
+            shutil.copy2(vendor / "UPSTREAM.json", stage / "vendor/reanimate/UPSTREAM.json")
         shutil.copytree(skill_root / "assets/starter", stage / "assets/starter")
         for filename in ["LICENSE-APACHE", "LICENSE", "NOTICE"]:
             if (skill_root / filename).is_file():

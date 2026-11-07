@@ -21,3 +21,7 @@ Local English-only normalization: data/styles.csv removes the translated parenth
 references/toolkit/recipes.json also has cards listing that project as a mechanism source; those are rewritten in our own words.
 
 Impeccable method lessons: references/lessons/impeccable-lessons.md is an original summary in our own words of methods observed in pbakaus/impeccable, commit e89e3ada3e875a89ac2c5d33d11e65ebef6fe285, Apache-2.0, Copyright 2025 Paul Bakaus and contributors. No code, data or assets from that project are included.
+
+Reanimate scripts and references, Copyright (c) 2026 Niaz Morshed, MIT License.
+Pinned source is bundled in vendor/reanimate/ within scene skills (shared/vendor/reanimate/ in the source tree),
+with its original LICENSE and UPSTREAM.json. No upstream site examples or captured assets are included.

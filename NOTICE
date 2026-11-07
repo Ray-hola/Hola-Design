@@ -16,3 +16,7 @@ third-party material below, which keeps its own terms:
 Impeccable (Apache-2.0, Copyright 2025 Paul Bakaus) informed lessons rewritten in our own words; its code and data
 are not included. Fonts are referenced, not distributed.
 Each skill's NOTICE records what was and was not taken from its method references.
+
+Reanimate scripts and references, Copyright (c) 2026 Niaz Morshed, MIT License.
+Pinned source is bundled in vendor/reanimate/ within scene skills (shared/vendor/reanimate/ in the source tree),
+with its original LICENSE and UPSTREAM.json. No upstream site examples or captured assets are included.
