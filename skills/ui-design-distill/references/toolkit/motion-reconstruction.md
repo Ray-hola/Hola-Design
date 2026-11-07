@@ -154,3 +154,10 @@ failed cache and error, configure permitted `HTTPS_PROXY`,
 `PLAYWRIGHT_DOWNLOAD_HOST` or `PLAYWRIGHT_DOWNLOAD_CONNECTION_TIMEOUT` per the
 platform, then rerun the same command. Do not report a partially installed runtime
 as ready or claim that every computer is supported.
+
+Before running helpers, detect Python 3.9+. If it is missing, install it through
+the host's permitted native package manager (for example Homebrew, apt or winget),
+then run setup; do not treat a missing interpreter as a successful installation.
+A read-only/offline host or unavailable OS privileges remains a disclosed blocker.
+Git checkout must preserve LF source bytes; this repository's `.gitattributes`
+prevents Windows autocrlf from invalidating the pinned provenance hashes.

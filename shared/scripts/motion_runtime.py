@@ -100,7 +100,7 @@ def valid_engine(path):
         if not p.is_file() or p.is_symlink():
             return False
         expected = item['sha256']
-        if path == cached_engine():
+        if path.resolve() == cached_engine().resolve():
             expected = hashlib.sha256(runtime_bytes(name)).hexdigest()
         elif name == 'scripts/lib.ts' and digest(p) != expected:
             expected = hashlib.sha256(runtime_bytes(name)).hexdigest()
