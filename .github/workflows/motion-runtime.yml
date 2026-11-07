@@ -1,0 +1,27 @@
+name: Motion runtime portability
+on:
+  workflow_dispatch:
+  push:
+    paths: ['shared/scripts/motion_*.py', 'shared/vendor/reanimate/**', 'tests/motion_runtime_smoke.py', '.github/workflows/motion-runtime.yml']
+  pull_request:
+    paths: ['shared/scripts/motion_*.py', 'shared/vendor/reanimate/**', 'tests/motion_runtime_smoke.py', '.github/workflows/motion-runtime.yml']
+permissions:
+  contents: read
+jobs:
+  runtime:
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-14, windows-2022]
+    runs-on: ${{ matrix.os }}
+    env:
+      HOLA_DESIGN_CACHE: ${{ runner.temp }}/hola-motion
+      PLAYWRIGHT_DOWNLOAD_CONNECTION_TIMEOUT: '120000'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - run: python shared/scripts/motion_tools.py setup --allow-browser --download-bun --with-system-deps
+      - run: python tests/motion_runtime_smoke.py

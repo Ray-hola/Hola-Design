@@ -121,7 +121,7 @@ For animation studies, each scene and generated consumer skill also carries a pi
 [Reanimate](https://github.com/NiazMorshed2007/reanimate) backend (MIT). Its capture,
 video sampling, easing, diff and contact-sheet tools feed the existing three loops.
 Use `scripts/motion_tools.py doctor` and the [motion guide](skills/ui-design-distill/references/toolkit/motion-reconstruction.md).
-This optional path needs Bun 1.1+ and locally installed Reanimate dependencies;
+The optional `motion_tools.py setup --allow-browser` bootstraps pinned Bun, dependencies and Chromium in a user cache;
 Python-only tasks retain their existing requirements. Comparisons enforce complete
 frame coverage and explicit fidelity limits; metrics do not grant a design PASS.
 

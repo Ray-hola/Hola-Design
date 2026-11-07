@@ -112,7 +112,7 @@ python3 skills/ui-design-distill/scripts/principles.py search "alignment"
 动画学习时，各场景和生成的产物 skill 还包含固定版本的
 [Reanimate](https://github.com/NiazMorshed2007/reanimate) 后端（MIT），提供录制、视频采样、缓动分析、逐帧差异与联系表工具，证据接入既有三层 LOOP。
 从 `scripts/motion_tools.py doctor` 和[动态复刻指南](skills/ui-design-distill/references/toolkit/motion-reconstruction.md)开始。
-这条可选路径需要 Bun 1.1+ 及本机安装的 Reanimate 依赖；仅使用 Python 的任务维持原有环境要求。
+可用 `motion_tools.py setup --allow-browser` 在用户缓存中引导安装固定版本 Bun、依赖和 Chromium；仅使用 Python 的任务维持原有环境要求。
 比较会检查完整帧覆盖和明确的精度阈值，测量合格不会自动产生设计 PASS。
 
 各分支有自己的配方。UI 与 Web 分支另外内置 [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) 目录，可检索字体、图标、配色和各框架指南。配方和目录结果仍是候选建议，需要结合参考证据、当前平台和任务判断。

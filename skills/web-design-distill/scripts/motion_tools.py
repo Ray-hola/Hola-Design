@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Optional pinned Reanimate backend. Measurements never issue a LOOP PASS."""
 import argparse
+import importlib.util
 import hashlib
 import json
 import math
@@ -13,6 +14,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BUNDLE = ROOT / "vendor/reanimate"
 OPERATIONS = {"capture", "frames", "compare", "sheet", "easing", "gl"}
+_runtime_spec = importlib.util.spec_from_file_location("_motion_runtime", Path(__file__).with_name("motion_runtime.py"))
+runtime = importlib.util.module_from_spec(_runtime_spec)
+_runtime_spec.loader.exec_module(runtime)
 
 
 def read(path):
@@ -26,17 +30,14 @@ def digest(path):
 def engine(explicit=None):
     manifest = read(BUNDLE / "UPSTREAM.json")
     candidates = [Path(explicit)] if explicit else [
-        BUNDLE, Path.home() / ".codex/skills/reanimate",
+        runtime.cached_engine(), BUNDLE, Path.home() / ".codex/skills/reanimate",
         Path.home() / ".claude/skills/reanimate"]
     valid = []
     for candidate in candidates:
         if not candidate.is_dir():
             continue
         # Dependency installation must not silently select another source revision.
-        if all((candidate / f["path"]).is_file() and
-               digest(candidate / f["path"]) == f["sha256"]
-               for f in manifest["files"] if f["path"] == "LICENSE" or
-               (f["path"].startswith("scripts/") and f["path"] != "scripts/bun.lock")):
+        if runtime.valid_engine(candidate):
             valid.append(candidate)
     if not valid:
         raise ValueError("No engine matches the pinned Reanimate source")
@@ -164,9 +165,9 @@ def assess(report, inputs, fidelity):
 def execute(operation, args, explicit=None, fidelity="motion-faithful"):
     unique_options(args)
     source = engine(explicit)
-    bun = shutil.which("bun")
+    bun = runtime.bun_path()
     if not bun:
-        raise ValueError("Bun is missing; install Bun 1.1+ before optional motion tools")
+        raise ValueError("Bun is missing; run motion_tools.py setup --allow-browser first")
     output = flag(args, "--out")
     if output and (Path(output).exists() or Path(output).is_symlink()):
         raise ValueError("Output already exists; preserve it and use a new round directory")
@@ -190,7 +191,7 @@ def execute(operation, args, explicit=None, fidelity="motion-faithful"):
     command = [bun, str(source / "scripts" / (operation + ".ts"))] + args
     if output and operation in {"capture", "frames", "compare", "sheet"}:
         Path(output).mkdir(parents=True, exist_ok=False)
-    run = subprocess.run(command, capture_output=True, text=True)
+    run = subprocess.run(command, capture_output=True, text=True, env=runtime.env_for(source))
     receipt = {"backend": "reanimate", "upstream_commit": read(BUNDLE / "UPSTREAM.json")["commit"],
                "operation": operation, "command": command, "exit_code": run.returncode,
                "script_sha256": digest(source / "scripts" / (operation + ".ts")),
@@ -237,25 +238,32 @@ def execute(operation, args, explicit=None, fidelity="motion-faithful"):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("operation", choices=sorted(OPERATIONS | {"doctor"}))
+    p.add_argument("operation", choices=sorted(OPERATIONS | {"doctor", "setup"}))
     p.add_argument("--engine", help="An explicitly selected root with exactly the pinned source")
     p.add_argument("--fidelity", choices=["motion-faithful", "pixel-faithful"], default="motion-faithful")
     p.add_argument("--allow-browser", action="store_true", help="Capture or render sheets only when the host permits this browser backend")
+    p.add_argument("--cache-dir", help="User-writable runtime cache; never changes the installed skill")
+    p.add_argument("--with-system-deps", action="store_true", help="Linux only: install Playwright OS libraries, requires apt/root permission")
+    p.add_argument("--download-bun", action="store_true", help="Verify a fresh pinned Bun download even when Bun is already installed")
     options, args = p.parse_known_args()
     if args[:1] == ["--"]:
         args = args[1:]
     try:
+        if options.cache_dir:
+            import os
+            os.environ["HOLA_DESIGN_CACHE"] = options.cache_dir
+        if options.operation == "setup":
+            print(json.dumps(runtime.setup(options.allow_browser, options.with_system_deps, options.download_bun), indent=2))
+            return 0
         if options.operation == "doctor":
             source = engine(options.engine)
-            print(json.dumps({"bun": shutil.which("bun"), "engine": str(source),
-                              "dependencies_installed": (source / "scripts/node_modules/pngjs").is_dir(),
-                              "ffmpeg_installed": (source / "scripts/node_modules/ffmpeg-static/ffmpeg").is_file(),
-                              "upstream_commit": read(BUNDLE / "UPSTREAM.json")["commit"]}, indent=2))
-            return 0
+            result = runtime.doctor(source, browser=options.allow_browser)
+            print(json.dumps(result, indent=2))
+            return 0 if result["ready"] else 2
         if options.operation in {"capture", "sheet"} and not options.allow_browser:
             raise ValueError("Browser backend not enabled: use the host's permitted capture/export, or explicitly authorize this backend with --allow-browser")
         return execute(options.operation, args, options.engine, options.fidelity)
-    except (ValueError, OSError, KeyError, TypeError) as e:
+    except (ValueError, OSError, KeyError, TypeError, subprocess.SubprocessError) as e:
         print(json.dumps({"error": str(e), "loop_acceptance": "UNASSESSED"}), file=sys.stderr)
         return 1
 

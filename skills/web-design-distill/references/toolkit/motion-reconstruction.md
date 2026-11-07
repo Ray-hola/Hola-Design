@@ -45,14 +45,14 @@ or declare the parent loop complete because the backend stopped.
 ## Commands
 
 Resolve `SKILL_ROOT` to the active scene or generated consumer skill. Optional
-runtime: Bun 1.1+, plus Reanimate's dependencies. `doctor` verifies a bundled or
+runtime: Python 3.9+ launches a pinned Bun 1.4.4 environment. `doctor` verifies a bundled or
 installed engine against the pinned source; `--engine` selects an exact match.
 
 ```sh
-# One-time optional setup: inspect the bundled setup script first. It installs
-# local dependencies and Chromium, so run only where installation is permitted.
-bash "$SKILL_ROOT/vendor/reanimate/scripts/setup.sh"
-python3 "$SKILL_ROOT/scripts/motion_tools.py" doctor
+# One-time setup, including Bun when missing, frozen dependencies and Chromium.
+# Uses a user cache; does not write inside the installed skill or alter PATH.
+python3 "$SKILL_ROOT/scripts/motion_tools.py" setup --allow-browser
+python3 "$SKILL_ROOT/scripts/motion_tools.py" doctor --allow-browser
 
 # Local original video: probe, extract a selected interval, then inspect every sheet.
 python3 "$SKILL_ROOT/scripts/motion_tools.py" frames -- \
@@ -124,3 +124,32 @@ them through the existing evidence contract:
 Finish with the existing intent, quality, challenge, integrity and convergence
 gates and the actual `loop_tools.py finish` result. Motion metrics neither replace
 the weakest-subject judgment nor establish usability, source rights or transfer.
+
+## Portable environment contract
+
+Native targets: macOS arm64/x64, Linux glibc arm64/x64 and Windows x64.
+Python 3.9+, internet access, a writable user cache and roughly 1 GB free space
+are prerequisites. Use `python` on Windows if `python3` is unavailable. Follow
+Playwright's current OS requirements; an unsupported OS/CPU is a real blocker,
+not an installation success. Windows ARM64 and Linux musl are not claimed.
+
+`setup --allow-browser` downloads missing Bun from fixed official release URLs,
+checks the pinned archive SHA-256 and executable version, copies verified source
+into the user cache, installs frozen dependencies, explicitly installs ffmpeg,
+and installs Chromium. A runtime-only, hash-checked `lib.ts` adaptation selects
+`ffmpeg.exe` on Windows; bundled upstream source is unchanged. It then actually
+launches Chromium, decodes an owned screenshot and executes a pixel comparison.
+Only a fully successful probe sets `ready=true` and exits 0. `doctor` without
+`--allow-browser` leaves browser readiness unprobed and exits 2.
+
+Use `--cache-dir <writable-directory>` to isolate/recover an installation, and
+`--download-bun` for a genuine binary download test despite preinstalled Bun.
+On supported Linux, add `--with-system-deps` only when apt/root installation is
+permitted; otherwise install the named Playwright system libraries through the
+host administrator. No setup script bypasses host permissions.
+
+Browser downloads can fail due to network/DNS/proxy restrictions. Preserve the
+failed cache and error, configure permitted `HTTPS_PROXY`,
+`PLAYWRIGHT_DOWNLOAD_HOST` or `PLAYWRIGHT_DOWNLOAD_CONNECTION_TIMEOUT` per the
+platform, then rerun the same command. Do not report a partially installed runtime
+as ready or claim that every computer is supported.

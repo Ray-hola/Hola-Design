@@ -327,6 +327,7 @@ def package(profile, source, review, output_root, name, description_file, journa
         shutil.copy2(skill_root / "scripts/collect_font.py", stage / "scripts/collect_font.py")
         shutil.copy2(skill_root / "scripts/principles.py", stage / "scripts/principles.py")
         shutil.copy2(skill_root / "scripts/motion_tools.py", stage / "scripts/motion_tools.py")
+        shutil.copy2(skill_root / "scripts/motion_runtime.py", stage / "scripts/motion_runtime.py")
         if (skill_root / "vendor/reanimate").is_dir():
             vendor = skill_root / "vendor/reanimate"
             manifest = json.loads((vendor / "UPSTREAM.json").read_text())
