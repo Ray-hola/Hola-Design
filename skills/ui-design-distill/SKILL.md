@@ -101,7 +101,7 @@ per-check evidence. Do not infer task completeness from a good-looking screensho
 
 ## Motion references and reconstruction
 
-For an animated reference or output, read [motion reconstruction](references/toolkit/motion-reconstruction.md). Use the pinned Reanimate backend to sample media, write a per-element motion spec, capture a comparable reconstruction and inspect frame/trajectory differences. Keep source fidelity, new-content design and independent feedback as separate LOOP evidence. The optional `scripts/motion_tools.py` refuses incomplete frame comparisons; its measurements cannot issue a LOOP PASS.
+For an animated reference or output, read [motion reconstruction](references/toolkit/motion-reconstruction.md). First run `python3 "$SKILL_ROOT/scripts/motion_tools.py" doctor --allow-browser`; if it is not ready, follow the guide's user-cache `setup` and missing-interpreter instructions before capture. Use the pinned Reanimate backend to sample media, write a per-element motion spec, capture a comparable reconstruction and inspect frame/trajectory differences. Keep source fidelity, new-content design and independent feedback as separate LOOP evidence. The optional `scripts/motion_tools.py` refuses incomplete frame comparisons; its measurements cannot issue a LOOP PASS.
 
 ## Load resources only when needed
 

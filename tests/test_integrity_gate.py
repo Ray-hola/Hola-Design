@@ -369,6 +369,12 @@ class GeneratedSkill(unittest.TestCase):
                 self.assertIn("Integrity gate", (skill / "references/loop/loop-exit.md").read_text())
                 self.assertTrue((skill / "scripts/capture_artifact.py").is_file())
                 self.assertTrue((skill / "scripts/motion_tools.py").is_file())
+                self.assertTrue((skill / "scripts/motion_runtime.py").is_file())
+                probe = subprocess.run([sys.executable, '-B', str(skill / 'scripts/motion_tools.py'),
+                                        'doctor', '--engine', str(skill / 'vendor/reanimate')],
+                                       capture_output=True, text=True)
+                self.assertEqual(probe.returncode, 2, probe.stdout + probe.stderr)
+                self.assertFalse(json.loads(probe.stdout)['ready'])
                 self.assertTrue((skill / "references/toolkit/motion-reconstruction.md").is_file())
                 vendor = skill / "vendor/reanimate"
                 manifest = json.loads((vendor / "UPSTREAM.json").read_text())

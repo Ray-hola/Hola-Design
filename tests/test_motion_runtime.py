@@ -53,5 +53,12 @@ class RuntimeBootstrap(unittest.TestCase):
             r.setup()
         install.assert_not_called()
 
+    def test_runtime_overlays_preserve_original_unicode(self):
+        for name in ['scripts/lib.ts', 'scripts/capture.ts', 'scripts/sheet.ts']:
+            original = (r.BUNDLE / name).read_bytes().decode('utf-8')
+            overlay = r.runtime_bytes(name).decode('utf-8')
+            self.assertEqual(''.join(c for c in original if ord(c) > 127),
+                             ''.join(c for c in overlay if ord(c) > 127))
+
 
 if __name__=='__main__':unittest.main()

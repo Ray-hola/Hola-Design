@@ -25,3 +25,4 @@ jobs:
           python-version: '3.12'
       - run: python shared/scripts/motion_tools.py setup --allow-browser --download-bun --with-system-deps
       - run: python tests/motion_runtime_smoke.py
+      - run: python -B -m unittest discover -s tests -p test_motion_runtime.py -v

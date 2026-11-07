@@ -25,7 +25,7 @@ BINARIES = {
 
 
 def manifest():
-    return json.loads((BUNDLE / 'UPSTREAM.json').read_text())
+    return json.loads((BUNDLE / 'UPSTREAM.json').read_text(encoding='utf-8'))
 
 
 def digest(p):
@@ -78,15 +78,15 @@ def patched_lib(data):
 def runtime_bytes(name):
     source = BUNDLE / name
     if name == 'scripts/lib.ts':
-        return patched_lib(source.read_text()).encode()
+        return patched_lib(source.read_text(encoding='utf-8')).encode('utf-8')
     if name == 'scripts/capture.ts':
-        data = source.read_text().replace('chromium.launch({ headless:', 'chromium.launch({ channel: "chromium", headless:')
+        data = source.read_text(encoding='utf-8').replace('chromium.launch({ headless:', 'chromium.launch({ channel: "chromium", headless:')
         data = 'import { pathToFileURL } from "node:url";\n' + data
         data = data.replace('if (!/^[a-z]+:/i.test(url)) url = "file://" + abs(url);',
                             'if (!/^(https?|file|data|about):/i.test(url)) url = pathToFileURL(abs(url)).href;')
-        return data.encode()
+        return data.encode('utf-8')
     if name == 'scripts/sheet.ts':
-        return source.read_text().replace('chromium.launch()', 'chromium.launch({ channel: "chromium" })').encode()
+        return source.read_text(encoding='utf-8').replace('chromium.launch()', 'chromium.launch({ channel: "chromium" })').encode('utf-8')
     return source.read_bytes()
 
 

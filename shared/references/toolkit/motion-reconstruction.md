@@ -28,6 +28,16 @@ sequence, then sample fast changes densely enough to inspect their intermediate
 states. Mark occlusion, dropped/duplicated frames, compression and source changes.
 Do not infer a product trigger or backend from a presentation recording.
 
+Treat the coverage unit as task + state + input territory. A matching handle drag
+does not prove dragging from the non-control panel body, and a scrollable interior
+or form control may intentionally own a different gesture. Observe these branches
+in the source, preserve their conditions, and test both return and dismissal.
+Exercise interrupted/repeated transitions as well as entry. Repair a missing
+observed branch before claiming full fidelity; do not narrow scope after failure
+without the user's agreement. Verify that any prepared capture state is actually
+settled before applying its trigger.
+
+
 ## Connect the two inner loops and the outer loop
 
 | Existing loop | Motion work | Decision and return path |
