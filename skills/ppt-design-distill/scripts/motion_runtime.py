@@ -75,6 +75,21 @@ def patched_lib(data):
     return data.replace(old, new)
 
 
+def runtime_bytes(name):
+    source = BUNDLE / name
+    if name == 'scripts/lib.ts':
+        return patched_lib(source.read_text()).encode()
+    if name == 'scripts/capture.ts':
+        data = source.read_text().replace('chromium.launch({ headless:', 'chromium.launch({ channel: "chromium", headless:')
+        data = 'import { pathToFileURL } from "node:url";\n' + data
+        data = data.replace('if (!/^[a-z]+:/i.test(url)) url = "file://" + abs(url);',
+                            'if (!/^(https?|file|data|about):/i.test(url)) url = pathToFileURL(abs(url)).href;')
+        return data.encode()
+    if name == 'scripts/sheet.ts':
+        return source.read_text().replace('chromium.launch()', 'chromium.launch({ channel: "chromium" })').encode()
+    return source.read_bytes()
+
+
 def valid_engine(path):
     path = Path(path)
     for item in manifest()['files']:
@@ -85,8 +100,10 @@ def valid_engine(path):
         if not p.is_file() or p.is_symlink():
             return False
         expected = item['sha256']
-        if name == 'scripts/lib.ts' and digest(p) != expected:
-            expected = hashlib.sha256(patched_lib((BUNDLE / name).read_text()).encode()).hexdigest()
+        if path == cached_engine():
+            expected = hashlib.sha256(runtime_bytes(name)).hexdigest()
+        elif name == 'scripts/lib.ts' and digest(p) != expected:
+            expected = hashlib.sha256(runtime_bytes(name)).hexdigest()
         if digest(p) != expected:
             return False
     return True
@@ -157,15 +174,15 @@ def prepare_engine():
             raise ValueError('Bundled source hash mismatch: ' + item['path'])
         dest = out / item['path']
         safe_write_path(dest)
-        data = patched_lib(source.read_text()).encode() if item['path'] == 'scripts/lib.ts' else source.read_bytes()
-        if dest.exists() and (dest.is_symlink() or dest.read_bytes() != data):
+        data = runtime_bytes(item['path'])
+        if dest.exists() and (dest.is_symlink() or dest.read_bytes() not in {data, source.read_bytes()}):
             raise ValueError('Existing runtime source differs; preserve it and select a fresh HOLA_DESIGN_CACHE')
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_bytes(data)
     safe_write_path(out / 'UPSTREAM.json').write_bytes((BUNDLE / 'UPSTREAM.json').read_bytes())
     safe_write_path(out / 'RUNTIME.json').write_text(json.dumps({'upstream_commit': manifest()['commit'],
-        'adaptation': 'lib.ts selects ffmpeg.exe on Windows; vendored source remains unchanged',
-        'lib_sha256': digest(out / 'scripts/lib.ts'), 'bun_version': VERSION}, indent=2) + '\n')
+        'adaptation': 'Windows ffmpeg.exe and file URLs; capture/sheet/probe use the same full Chromium channel. Vendored source unchanged.',
+        'overlay_sha256': {name: digest(out / name) for name in ['scripts/lib.ts','scripts/capture.ts','scripts/sheet.ts']}, 'bun_version': VERSION}, indent=2) + '\n')
     return out
 
 
@@ -182,7 +199,7 @@ try {
   const ff = join(process.cwd(),'node_modules','ffmpeg-static',process.platform==='win32'?'ffmpeg.exe':'ffmpeg');
   result.ffmpeg = existsSync(ff) && spawnSync(ff,['-version']).status===0;
   if (process.env.HOLA_PROBE_BROWSER==='1') {
-    const b=await chromium.launch({headless:true});
+    const b=await chromium.launch({channel:'chromium',headless:true});
     try {const p=await b.newPage({viewport:{width:64,height:64}});
       await p.setContent('<body style="margin:0;background:#19323a"><div style="width:32px;height:32px;background:#fe7055"></div>');
       const data=PNG.sync.read(await p.screenshot());
@@ -231,7 +248,7 @@ def setup(browser=False, system_deps=False, download_bun=False):
     if system_deps and platform.system() == 'Linux':
         run([bun, 'node_modules/playwright/cli.js', 'install-deps', 'chromium'], cwd=source / 'scripts', env=env)
     print('runtime: install Chromium', file=sys.stderr, flush=True)
-    run([bun, 'node_modules/playwright/cli.js', 'install', 'chromium'], cwd=source / 'scripts', env=env)
+    run([bun, 'node_modules/playwright/cli.js', 'install', '--no-shell', 'chromium'], cwd=source / 'scripts', env=env)
     print('runtime: launch browser, check pixels and compare repeated capture', file=sys.stderr, flush=True)
     result = doctor(source, browser=True)
     safe_write_path(runtime_dir() / 'setup-receipt.json').write_text(json.dumps(result, indent=2) + '\n')

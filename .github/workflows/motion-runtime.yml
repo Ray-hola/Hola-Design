@@ -16,7 +16,7 @@ jobs:
         os: [ubuntu-24.04, macos-14, windows-2022]
     runs-on: ${{ matrix.os }}
     env:
-      HOLA_DESIGN_CACHE: ${{ runner.temp }}/hola-motion
+      HOLA_DESIGN_CACHE: ${{ github.workspace }}/../hola-motion-runtime
       PLAYWRIGHT_DOWNLOAD_CONNECTION_TIMEOUT: '120000'
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262

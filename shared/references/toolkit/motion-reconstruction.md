@@ -136,8 +136,9 @@ not an installation success. Windows ARM64 and Linux musl are not claimed.
 `setup --allow-browser` downloads missing Bun from fixed official release URLs,
 checks the pinned archive SHA-256 and executable version, copies verified source
 into the user cache, installs frozen dependencies, explicitly installs ffmpeg,
-and installs Chromium. A runtime-only, hash-checked `lib.ts` adaptation selects
-`ffmpeg.exe` on Windows; bundled upstream source is unchanged. It then actually
+and installs Chromium. Runtime-only, hash-checked adaptations select `ffmpeg.exe` and valid file URLs
+on Windows, and use full Chromium consistently in capture, sheets and the probe;
+bundled upstream source is unchanged. It then actually
 launches Chromium, decodes an owned screenshot and executes a pixel comparison.
 Only a fully successful probe sets `ready=true` and exits 0. `doctor` without
 `--allow-browser` leaves browser readiness unprobed and exits 2.
