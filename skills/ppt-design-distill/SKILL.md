@@ -97,6 +97,10 @@ separately. A preview validates only the patterns it exercises.
 Report source coverage, inferred decisions, package location and each check as
 passed/failed/skipped. Do not claim transfer success if only XML/JSON was checked.
 
+## Motion references and reconstruction
+
+For an animated reference or output, read [motion reconstruction](references/toolkit/motion-reconstruction.md). Use the pinned Reanimate backend to sample media, write a per-element motion spec, capture a comparable reconstruction and inspect frame/trajectory differences. Keep source fidelity, new-content design and independent feedback as separate LOOP evidence. The optional `scripts/motion_tools.py` refuses incomplete frame comparisons; its measurements cannot issue a LOOP PASS.
+
 ## Load resources only when needed
 
 | Decision | Read / run |

@@ -368,6 +368,15 @@ class GeneratedSkill(unittest.TestCase):
                 self.assertIn("integrity", (skill / "SKILL.md").read_text())
                 self.assertIn("Integrity gate", (skill / "references/loop/loop-exit.md").read_text())
                 self.assertTrue((skill / "scripts/capture_artifact.py").is_file())
+                self.assertTrue((skill / "scripts/motion_tools.py").is_file())
+                self.assertTrue((skill / "references/toolkit/motion-reconstruction.md").is_file())
+                vendor = skill / "vendor/reanimate"
+                manifest = json.loads((vendor / "UPSTREAM.json").read_text())
+                self.assertEqual(manifest["license"], "MIT")
+                self.assertEqual({str(p.relative_to(vendor)) for p in vendor.rglob("*") if p.is_file()},
+                                 {item["path"] for item in manifest["files"]} | {"UPSTREAM.json"})
+                for item in manifest["files"]:
+                    self.assertEqual(sha(vendor / item["path"]), item["sha256"])
                 self.assertEqual(sha(skill / "LICENSE-APACHE"), sha(REPO / "LICENSE"))
                 self.assertIn("Ray-hola", (skill / "NOTICE").read_text())
                 if scene != "ppt":
