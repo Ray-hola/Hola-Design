@@ -196,10 +196,12 @@ try {
   const {default:pixelmatch} = await import('pixelmatch');
   const {chromium} = await import('playwright');
   result.dependencies = true;
-  const ff = join(process.cwd(),'node_modules','ffmpeg-static',process.platform==='win32'?'ffmpeg.exe':'ffmpeg');
+  const {ffmpegPath}=await import('./lib.ts');
+  const ff = ffmpegPath();
   result.ffmpeg = existsSync(ff) && spawnSync(ff,['-version']).status===0;
   if (process.env.HOLA_PROBE_BROWSER==='1') {
-    const b=await chromium.launch({channel:'chromium',headless:true});
+    const channel=process.env.HOLA_CHROMIUM_CHANNEL;
+    const b=await chromium.launch({...channel?{channel}:{},headless:true});
     try {const p=await b.newPage({viewport:{width:64,height:64}});
       await p.setContent('<body style="margin:0;background:#19323a"><div style="width:32px;height:32px;background:#fe7055"></div>');
       const data=PNG.sync.read(await p.screenshot());
@@ -220,11 +222,13 @@ def doctor(engine=None, browser=False):
     result = {'platform': target(), 'bun': bun, 'engine': str(source), 'cache': str(runtime_dir()),
               'upstream_commit': manifest()['commit'], 'source_verified': valid_engine(source),
               'dependencies': False, 'ffmpeg': False, 'browser': 'not_probed', 'pixel_comparison': False}
+    result['browser_channel'] = 'chromium' if source.resolve() == cached_engine().resolve() else 'default'
     if bun:
         try:
             result['bun_version'] = run([bun, '--version'], timeout=15).strip()
             if result['source_verified']:
                 env = env_for(source); env['HOLA_PROBE_BROWSER'] = '1' if browser else '0'
+                env['HOLA_CHROMIUM_CHANNEL'] = 'chromium' if result['browser_channel'] == 'chromium' else ''
                 result.update(json.loads(run([bun, '-e', PROBE], cwd=source / 'scripts', env=env, timeout=90)))
         except (ValueError, OSError, subprocess.TimeoutExpired) as e:
             result['error'] = str(e)
