@@ -61,6 +61,11 @@ hash alone cannot renew old acceptance.
 
 ## Transitions: act, record, then decide
 
+For animated references or outputs, use the optional
+[motion sampling and reconstruction backend](../toolkit/motion-reconstruction.md)
+inside these transitions. Its reports are evidence inputs; they do not create a
+second journal or replace either inner loop, outer feedback or the five exit gates.
+
 | Stage | Required action / evidence | Continue when | Otherwise |
 |---|---|---|---|
 | DISTILL / inspect | Inspect actual source; record source ID, location, method, status and value | Claims have matching evidence and scope | Keep missing facts unknown; obtain evidence or disclose the limit |

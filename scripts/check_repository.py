@@ -33,7 +33,8 @@ def publication_files(root):
                 yield candidate
         folders[:] = sorted(name for name in folders if name not in excluded and not (base / name).is_symlink())
         for name in sorted(files):
-            yield base / name
+            if name not in excluded:
+                yield base / name
 
 
 def check():

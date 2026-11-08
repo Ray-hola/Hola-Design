@@ -109,6 +109,12 @@ python3 skills/ui-design-distill/scripts/kit.py catalog "error summary" --domain
 python3 skills/ui-design-distill/scripts/principles.py search "alignment"
 ```
 
+动画学习时，各场景和生成的产物 skill 还包含固定版本的
+[Reanimate](https://github.com/NiazMorshed2007/reanimate) 后端（MIT），提供录制、视频采样、缓动分析、逐帧差异与联系表工具，证据接入既有三层 LOOP。
+从 `scripts/motion_tools.py doctor` 和[动态复刻指南](skills/ui-design-distill/references/toolkit/motion-reconstruction.md)开始。
+可用 `motion_tools.py setup --allow-browser` 在用户缓存中引导安装固定版本 Bun、依赖和 Chromium；仅使用 Python 的任务维持原有环境要求。
+比较会检查完整帧覆盖和明确的精度阈值，测量合格不会自动产生设计 PASS。
+
 各分支有自己的配方。UI 与 Web 分支另外内置 [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) 目录，可检索字体、图标、配色和各框架指南。配方和目录结果仍是候选建议，需要结合参考证据、当前平台和任务判断。
 
 <details>
@@ -159,9 +165,14 @@ Hola-Design/
 
 ## 来源与许可
 
-有两组第三方内容因 skill 运行需要而原样内置，skill 的其余内容都用我们自己的语言编写。十个网页提取脚本原样来自 Nathan Onn 的 [agent-skills](https://github.com/nathanonn/agent-skills)，MIT 许可保留在 [Web 分支](skills/web-design-distill/NOTICE)。
+有三组第三方内容因 skill 运行需要而内置，skill 的其余内容都用我们自己的语言编写。十个网页提取脚本原样来自 Nathan Onn 的 [agent-skills](https://github.com/nathanonn/agent-skills)，MIT 许可保留在 [Web 分支](skills/web-design-distill/NOTICE)。
 
 UI 与 Web 分支内置 Next Level Builder 的 [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) 代码和数据，采用 MIT 许可，固定版本存放在 `vendor/ui-ux-pro-max/`，不受本仓库 Apache-2.0 许可覆盖。各 vendor 目录保留许可证、文件哈希和唯一一处本地修改的记录：[UI 来源记录](skills/ui-design-distill/vendor/ui-ux-pro-max/UPSTREAM.json) · [Web 来源记录](skills/web-design-distill/vendor/ui-ux-pro-max/UPSTREAM.json)。
+
+三个场景分支及生成的消费 skill 都内置 Niaz Morshed 的
+[Reanimate](https://github.com/NiazMorshed2007/reanimate) 固定版本原始 skill 源码，
+采用 MIT 许可，保留许可证和逐文件哈希：[动态工具来源记录](skills/ui-design-distill/vendor/reanimate/UPSTREAM.json)。
+该许可不延伸到采集到的第三方图片、字体或网站代码。
 
 来自 [Impeccable](https://github.com/pbakaus/impeccable)(Apache-2.0)的方法经验已用我们自己的语言总结,附来源位置以及我们选择不采用的部分:[UI](skills/ui-design-distill/references/lessons/impeccable-lessons.md) · [Web](skills/web-design-distill/references/lessons/impeccable-lessons.md) · [PPT](skills/ppt-design-distill/references/lessons/impeccable-lessons.md)。
 

@@ -97,6 +97,13 @@ class LocalStorage(unittest.TestCase):
         self.assertEqual(len(errors), 2)
         self.assertTrue(all('local-only content is tracked' in e for e in errors))
 
+    def test_publication_excludes_worktree_git_metadata_file(self):
+        scanner = module('check_repository')
+        self.file('.git')
+        self.file('README.md')
+        self.assertEqual([p.relative_to(self.root).as_posix()
+                          for p in scanner.publication_files(self.root)], ['README.md'])
+
 
 if __name__ == '__main__':
     unittest.main()

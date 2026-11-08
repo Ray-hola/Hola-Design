@@ -117,6 +117,14 @@ python3 skills/ui-design-distill/scripts/kit.py catalog "error summary" --domain
 python3 skills/ui-design-distill/scripts/principles.py search "alignment"
 ```
 
+For animation studies, each scene and generated consumer skill also carries a pinned
+[Reanimate](https://github.com/NiazMorshed2007/reanimate) backend (MIT). Its capture,
+video sampling, easing, diff and contact-sheet tools feed the existing three loops.
+Use `scripts/motion_tools.py doctor` and the [motion guide](skills/ui-design-distill/references/toolkit/motion-reconstruction.md).
+The optional `motion_tools.py setup --allow-browser` bootstraps pinned Bun, dependencies and Chromium in a user cache;
+Python-only tasks retain their existing requirements. Comparisons enforce complete
+frame coverage and explicit fidelity limits; metrics do not grant a design PASS.
+
 Each branch has its own recipes. UI and web branches also bundle the [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) catalog for font, icon, color and framework lookups. Recipes and catalog results remain proposals: compare them with the reference evidence, current platform, and brief.
 
 <details>
@@ -169,9 +177,15 @@ Scene folders are self-contained. Their scripts, reference guides, starter asset
 
 ## Attribution and licensing
 
-Two third-party sets are bundled as-is because the skills run on them; the rest of the skill content is written in our own words. Ten web extraction scripts come unchanged from Nathan Onn's [agent-skills](https://github.com/nathanonn/agent-skills), under the MIT license in the [web branch](skills/web-design-distill/NOTICE).
+Three third-party sets are bundled because the skills run on them; the rest of the skill content is written in our own words. Ten web extraction scripts come unchanged from Nathan Onn's [agent-skills](https://github.com/nathanonn/agent-skills), under the MIT license in the [web branch](skills/web-design-distill/NOTICE).
 
 The UI and web branches bundle the code and data of [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) by Next Level Builder, MIT License, at a pinned commit in `vendor/ui-ux-pro-max/`. It is not covered by this repository's Apache-2.0 license. Each vendor folder keeps its license, file hashes and the one documented local change: [UI provenance](skills/ui-design-distill/vendor/ui-ux-pro-max/UPSTREAM.json) · [Web provenance](skills/web-design-distill/vendor/ui-ux-pro-max/UPSTREAM.json).
+
+All three scene branches and generated consumer skills include pinned, unmodified
+[Reanimate](https://github.com/NiazMorshed2007/reanimate) skill source by Niaz
+Morshed under MIT. Its own license and per-file hashes travel with the code:
+[motion provenance](skills/ui-design-distill/vendor/reanimate/UPSTREAM.json).
+This does not license captured third-party assets, fonts or site code.
 
 Method lessons from [Impeccable](https://github.com/pbakaus/impeccable) (Apache-2.0) are summarized in our own words, with source locators and what we chose not to adopt: [UI](skills/ui-design-distill/references/lessons/impeccable-lessons.md) · [Web](skills/web-design-distill/references/lessons/impeccable-lessons.md) · [Presentations](skills/ppt-design-distill/references/lessons/impeccable-lessons.md).
 
